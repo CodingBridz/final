@@ -39,9 +39,13 @@
 							Login
 						</button>
 						
-					</div>
+					</div><br><br>
+					<center>
+						<p><a href="signup.php">Click Here</a> To Sign-Up.</p>
+						</center>
 
 				</form>
+
 			</div>
 		</div>
 	</div>
