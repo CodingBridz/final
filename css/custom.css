@@ -1,0 +1,28 @@
+/* your styles go here */
+.navbar-brand img{
+	width: 220px;
+	height: 50px;
+}
+.navbar .navbar-nav a.nav-link{
+  font-weight: bold;
+  font-size: 18px;
+}
+.navbar .langs a.active {
+    color: #333;
+    font-weight: bold;
+  	font-size: 18px;
+}
+.navbar{
+	/*opacity: 0;*/
+}
+.navbar:hover{
+	opacity: 1;
+}
+section.featured-posts .image img:hover{
+    height: 100%;
+    transform: scale(2.1);
+}
+#left{
+  margin-left:-900px;
+  
+}
