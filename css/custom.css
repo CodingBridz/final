@@ -26,4 +26,15 @@ section.featured-posts .image img:hover{
   margin-left:-900px;
   
 }
-
+/**/
+.contact-form{
+  background: white;
+  padding: 50px 20px;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    width: 400px;
+    font-size: 20px;
+}

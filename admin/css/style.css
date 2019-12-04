@@ -1,0 +1,133 @@
+body{
+	padding-top: 80px;
+}
+.navbar-brand{
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 2em;
+	padding-left: 20px;
+}
+.nav-item{
+	font-weight: 800;
+	text-transform: uppercase;
+}
+.navbar-light .navbar-nav .nav-item .nav-link:hover,
+.navbar-light .navbar-nav .nav-item.active .nav-link{
+	background: SlateBlue;
+	color: #fff;
+	height: 60px;
+	text-align: center;
+	padding-top: 17px;
+}
+.navbar-light .navbar-nav .nav-item .nav-link
+{
+	color:  SlateBlue;
+	padding: 5px 15px;
+	text-align: center;
+	padding-top: 17px;
+}
+.navbar-light .navbar-toggler{
+	border:none;
+	color: #fff;
+	border:2px solid #7f7f7f;
+	border-radius: 0;
+	outline: none;
+}
+/**/
+.smalld{
+	color: #B7B7B7;
+}
+.panel{
+	background-color: #3ca9e8;
+}
+.commet{
+	color: white;
+	padding-left: 23px;
+	padding-bottom: 10px;
+}
+.huge{
+	color: white;
+	padding-left: 70px;
+	font-size:40px;
+}
+.comm{
+	color: white;
+	padding-left: 4px;
+}
+.ddd{
+	 background-color: #e9ecef;
+	 padding: 7px 0 ;
+}
+.pull-left{
+	padding-left: 23px;
+	color: #3ca9e8;
+}
+.pull-left a{
+	text-decoration: none;
+}
+.com1{
+	color: red;
+	padding-left: 23px;
+}
+.com1 a{
+	color: red;
+	text-decoration: none;
+}
+.pull-left1{
+	color: green;
+	padding-left: 23px;
+}
+.pull-left1 a{
+	color: green;
+	text-decoration: none;
+}
+.pull-left2{
+	color: yellow;
+	padding-left: 23px;
+}
+.pull-left2 a{
+	color: yellow;
+	text-decoration: none;
+}
+.pull-right{
+	padding-left: 40px;
+	color: #3ca9e8;
+}
+.pull-right1{
+	padding-left: 40px;
+	color: red;
+}
+.pull-right2{
+	padding-left: 40px;
+	color: green;
+}
+.pull-right3{
+	padding-left: 40px;
+	color: yellow;
+}
+.panel-red{
+	background-color: red;
+	border: 2px solid red;
+	border-radius: 5px;
+}
+.panel-green{
+	background-color: green;
+	border: 2px solid green;
+	border-radius: 5px;
+}
+.panel-yellow{
+	background-color: yellow;
+	border: 2px solid yellow;
+	border-radius: 5px;
+}
+/**/
+.tag-boxes .panel-primary{
+
+	border: 2px solid #3ca9e8;
+	border-radius: 5px;
+}
+/*.cart-footer{
+	background-color: #e9ecef;
+	margin-left: 0;
+	margin-right:0;
+}*/

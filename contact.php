@@ -61,7 +61,7 @@
           <!-- Navbar Menu -->
           <div id="navbarcollapse" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a href="index.html" class="nav-link active "><i class="fa fa-home"></i> Home</a>
+              <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa fa-home"></i> Home</a>
               </li>
               <li class="nav-item"><a href="blog.html" class="nav-link "><i class="fa fa-rss-square"></i> Blog</a>
               </li>
@@ -69,7 +69,7 @@
               </li>
               <li class="nav-item"><a href="#" class="nav-link "><i class="fa fa-info-circle"></i> About</a>
               </li>
-              <li class="nav-item"><a href="#" class="nav-link "><i class="fa fa-phone"></i> Contact Us</a>
+              <li class="nav-item"><a href="#" class="nav-link active"><i class="fa fa-phone"></i> Contact Us</a>
               </li>
             </ul>
             <div class="navbar-text"><a href="#" class="search-btn"><i class="icon-search-1"></i></a></div>
@@ -86,19 +86,19 @@
             <div class="col-md-12">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.4357647795127!2d75.86302515008553!3d30.93039188304132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a837c9008b973%3A0xd750f8e26e9fe94a!2sCodingBridz!5e0!3m2!1sen!2sin!4v1575443104454!5m2!1sen!2sin" width="700" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 contact-form">
+              <center><h2>Contact Form</h2> </center>
                 <form action="">
                   <div class="form-group">
                       <label for="full-name">Full Name:</label>
                       <input type="text" id="full-name" class="form-control" placeholder="Full Name">
-                      <label for="full-name">Email:</label>
+                      <label for="Email">Email:</label>
                       <input type="text" id="Email" class="form-control" placeholder="Email">
-                      <label for="full-name">Full Name</label>
-                      <input type="text" name="full-name" class="form-control" placeholder="Full Name">
-                      <label for="full-name">Full Name</label>
-                      <input type="text" id="full-name" class="form-control" placeholder="Full Name">
-                      <label for="full-name">Full Name</label>
-                      <input type="text" id="full-name" class="form-control" placeholder="Full Name">
+                      <label for="Website">Website:</label>
+                      <input type="text" id="website" class="form-control" placeholder="Website">
+                      <label for="message">Message:</label>
+                      <textarea id="message" cols="30" rows="10" class="form-control" placeholder="Your Message Should Be Here"></textarea><br>
+                      <center><input type="submit" name="submit" value="Submit Here" class="btn btn-danger"></center>
                   </div>
                 </form>
             </div>
