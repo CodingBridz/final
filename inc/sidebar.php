@@ -1,3 +1,6 @@
+<?php
+  require_once('db.php');
+?>
 <aside class="col-lg-4">
           <!-- Widget [Search Bar Widget]-->
           <div class="widget search">
@@ -50,11 +53,27 @@
             <header>
               <h3 class="h6">Categories</h3>
             </header>
-            <div class="item d-flex justify-content-between"><a href="#">Growth</a><span>12</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Local</a><span>25</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Sales</a><span>8</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Tips</a><span>17</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Local</a><span>25</span></div>
+            <?php
+            $query="SELECT * FROM categories";
+            $run=mysqli_query($con,$query);
+            if(mysqli_num_rows($run) > 0){
+                while ($row = mysqli_fetch_array($run)) {
+
+                      $category = ucfirst($row['category']);
+                      $id = $row['id'];
+                    echo "
+
+                        <div class='item d-flex justify-content-between'><a href='index.php?cat_id=".$id."'>$category</a><span>12</span></div>
+                    ";    
+                }
+            } else{
+
+              echo "
+
+                        <div class='item d-flex justify-content-between'><a href='#'>No Categories Yet</a><span>12</span></div>
+                    ";
+            }
+            ?>
           </div>
           <!-- Widget [Tags Cloud Widget]-->
           <div class="widget tags">       
