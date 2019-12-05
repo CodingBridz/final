@@ -176,9 +176,87 @@
             </div>
           </div>
         </div>
+        <hr/>
+        <h3>New Users</h3>
+        <table class="table table-hover table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Sr #</th>
+              <th>Date</th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>05 Dec 2019</td>
+              <td>Deepak</td>
+              <td>Deepak_verma</td>
+              <td>admin</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>05 Dec 2019</td>
+              <td>Deepak</td>
+              <td>Deepak_verma</td>
+              <td>admin</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>05 Dec 2019</td>
+              <td>Navi</td>
+              <td>Navi_Singh</td>
+              <td>admin</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="#" class="btn btn-danger">View-Users</a>
+        <hr/>
+        <h3>New Posts</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Sr</th>
+              <th>Date</th>
+              <th>Post Title</th>
+              <th>Category</th>
+              <th>Views</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>05 Dec 2019</td>
+              <td>MediaOcean</td>
+              <td>Blog</td>
+              <td><i class="fa fa-eye"></i> 10</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>05 Dec 2019</td>
+              <td>MediaOcean</td>
+              <td>Blog</td>
+              <td><i class="fa fa-eye"></i> 10</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>05 Dec 2019</td>
+              <td>MediaOcean</td>
+              <td>Blog</td>
+              <td><i class="fa fa-eye"></i> 10</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="#" class="btn btn-info">View-Posts</a>
       </div>
     </div>
   </div>
+  <!-- Footer -->
+  <footer class="text-center footer">
+    Copyright &copy by Deepak & Navi 2019
+  </footer>
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
