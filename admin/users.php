@@ -1,70 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Admin</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="icon" type="text/css" href="img/icon1.png">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    <!-- Custom icon font-->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <?php require_once('inc/top.php');?>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-      <a class="navbar-brand" href="#">logo</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-lg-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-plus-square"></i> Add Post<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-user-plus"></i> Add User</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-user"></i> Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
-          </li>
-        </ul>
-      </div>
-  </nav>
+    <?php require_once('inc/header.php');?>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3">
-        <div class="list-group">
-          <a class="list-group-item active" href="index.php">
-            <i class="fa fa-tachometer"></i> Dashboard</a>
-          <a class="list-group-item d-flex justify-content-between align-items-center" href="">
-            <i class="fa fa-file-text"> All Post</i>
-            <span class="badge badge-primary badge-pill">14</span>
-          </a>
-          <a class="list-group-item d-flex justify-content-between align-items-center" href="#">
-            <i class="fa fa-comment"> Comments</i>
-            <span class="badge badge-primary badge-pill">10</span>
-          </a>
-          <a class="list-group-item d-flex justify-content-between align-items-center" href="category.php">
-            <i class="fa fa-folder-open"> Categories</i>
-            <span class="badge badge-primary badge-pill">6</span>
-          </a>
-          <a class="list-group-item d-flex justify-content-between align-items-center active" href=users.php>
-            <i class="fa fa-users"> Users</i>
-            <span class="badge badge-primary badge-pill">3</span>
-          </a>
-        </div>
+        <?php require_once('inc/sidebar.php');?>
       </div>
       <div class="col-md-9">
         <h1><i class="fa fa-folder-open"></i> Users
@@ -77,20 +21,110 @@
         </ol>
         <div class="row">
           <div class="col-md-6">
-      
+              <form action="">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <select class="form-control" name="" id="">
+                        <option value="delete">Delete</option>
+                        <option value="author">Change to Auhtor</option>
+                        <option value="admin">Change to Admin</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="submit" name="" class="btn btn-success" value="Apply">
+                    <a href="#" class="btn btn-primary">Add New</a>
+                  </div>
+                </div>
+              </form>
           </div>
            <div class="col-md-6">
               
           </div>
         </div>
+        <table class="table table-hover table-bordered table-striped">
+          <thead>
+            <tr>
+              <th><input type="checkbox" name=""></th>
+              <th>#</th>
+              <th>Date</th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Image</th>
+              <th>Password</th>
+              <th>Role</th>
+              <th>Post</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" name=""></td>
+              <td>1</td>
+              <td>5/12/19</td>
+              <td>Navi</td>
+              <td>Navi456</td>
+              <td>snavi4551@gamil.com</td>
+              <td><img src="img/icon1.png" alt="" class="img-responsive" width="40px;" height="30px;"></td>
+              <td>******</td>
+              <td>admin</td>
+              <td>11</td>
+              <td><a href=""><i class="fa fa-pencil"></i></a></td>
+              <td><a href=""><i class="fa fa-times"></i></a></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name=""></td>
+              <td>1</td>
+              <td>5/12/19</td>
+              <td>Navi</td>
+              <td>Navi456</td>
+              <td>snavi4551@gamil.com</td>
+              <td><img src="img/icon1.png" alt="" class="img-responsive" width="40px;" height="30px;"></td>
+              <td>******</td>
+              <td>admin</td>
+              <td>11</td>
+              <td><a href=""><i class="fa fa-pencil"></i></a></td>
+              <td><a href=""><i class="fa fa-times"></i></a></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name=""></td>
+              <td>1</td>
+              <td>5/12/19</td>
+              <td>Navi</td>
+              <td>Navi456</td>
+              <td>snavi4551@gamil.com</td>
+              <td><img src="img/icon1.png" alt="" class="img-responsive" width="40px;" height="30px;"></td>
+              <td>******</td>
+              <td>admin</td>
+              <td>11</td>
+              <td><a href=""><i class="fa fa-pencil"></i></a></td>
+              <td><a href=""><i class="fa fa-times"></i></a></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name=""></td>
+              <td>1</td>
+              <td>5/12/19</td>
+              <td>Navi</td>
+              <td>Navi456</td>
+              <td>snavi4551@gamil.com</td>
+              <td><img src="img/icon1.png" alt="" class="img-responsive" width="40px;" height="30px;"></td>
+              <td>******</td>
+              <td>admin</td>
+              <td>11</td>
+              <td><a href=""><i class="fa fa-pencil"></i></a></td>
+              <td><a href=""><i class="fa fa-times"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
 
       </div>
     </div>
-  </div><br><br>
+  </div><br>
   <!-- Footer -->
-  <footer class="text-center footer">
-    Copyright &copy by Deepak & Navi 2019
-  </footer>
+  <?php require_once('inc/footer.php');?>
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
