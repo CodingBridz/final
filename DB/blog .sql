@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 05, 2019 at 04:20 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Host: localhost
+-- Generation Time: Dec 05, 2019 at 05:20 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -52,7 +52,7 @@ INSERT INTO `categories` (`id`, `category`) VALUES
 
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
-  `date` int(11) NOT NULL,
+  `date` varchar(100) NOT NULL,
   `title` varchar(255) NOT NULL,
   `author` varchar(255) NOT NULL,
   `author_image` varchar(255) NOT NULL,
@@ -69,8 +69,10 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `date`, `title`, `author`, `author_image`, `image`, `categories`, `tags`, `post_data`, `views`, `status`) VALUES
-(1, 123456789, 'Post Setting', 'Deepak Verma', '', '', 'Nothing', '#Money', 'lorem ipsum fuck', 45, 'publish'),
-(2, 1234567899, 'another', 'navi', '', '', 'Text', '#Free', 'anything u want', 4555, 'publish');
+(1, '12/11/19', 'Post Setting', 'Deepak Verma', '', 'blog-post-1.jpeg', 'Nature', '#Money', 'lorem ipsum fuck', 45, 'publish'),
+(3, '12/11/19', 'Post Setting 1', 'Deepak Verma', '', 'blog-post-2.jpg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
+(4, '12/11/19', 'Post Setting 2', 'Deepak Verma', '', 'blog-post-3.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
+(5, '12/11/19', 'Post Setting 3', 'Deepak Verma', '', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish');
 
 --
 -- Indexes for dumped tables
@@ -102,7 +104,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
