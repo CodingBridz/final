@@ -83,11 +83,11 @@ body{
 	text-decoration: none;
 }
 .pull-left2{
-	color: yellow;
+	color: #ff9900;
 	padding-left: 26px;
 }
 .pull-left2 a{
-	color: yellow;
+	color: #ff9900;
 	text-decoration: none;
 }
 .pull-right{
@@ -104,7 +104,7 @@ body{
 }
 .pull-right3{
 	padding-left: 38px;
-	color: yellow;
+	color: #ff9900;
 }
 .panel-red{
 	background-color: red;
@@ -117,8 +117,8 @@ body{
 	border-radius: 5px;
 }
 .panel-yellow{
-	background-color: yellow;
-	border: 2px solid yellow;
+	background-color: #ff9900;
+	border: 2px solid #ff9900;
 	border-radius: 5px;
 }
 /**/
