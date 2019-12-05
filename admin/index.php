@@ -108,7 +108,7 @@
                     <i class="fa fa-file-text fa-5x commet"></i>
                   </div>
                   <div class="col-xs-9">
-                    <div class="text-right huge">18</div>
+                    <div class="text-right huge" >18</div>
                     <div class="text-right comm">All Posts</div>
                   </div>
                 </div>
@@ -253,8 +253,9 @@
       </div>
     </div>
   </div>
+  <br/><br/>
   <!-- Footer -->
-  <footer class="text-center footer">
+  <footer class="text-center">
     Copyright &copy by Deepak & Navi 2019
   </footer>
     <!-- JavaScript files-->

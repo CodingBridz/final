@@ -42,6 +42,7 @@ body{
 }
 .commet{
 	color: white;
+	padding-top:6px;
 	padding-left: 23px;
 	padding-bottom: 10px;
 }
@@ -52,7 +53,7 @@ body{
 }
 .comm{
 	color: white;
-	padding-left: 4px;
+	padding-left:4px;
 }
 .ddd{
 	 background-color: #e9ecef;
@@ -83,7 +84,7 @@ body{
 }
 .pull-left2{
 	color: yellow;
-	padding-left: 23px;
+	padding-left: 26px;
 }
 .pull-left2 a{
 	color: yellow;
@@ -94,15 +95,15 @@ body{
 	color: #3ca9e8;
 }
 .pull-right1{
-	padding-left: 40px;
+	padding-left: 80px;
 	color: red;
 }
 .pull-right2{
-	padding-left: 40px;
+	padding-left: 80px;
 	color: green;
 }
 .pull-right3{
-	padding-left: 40px;
+	padding-left: 38px;
 	color: yellow;
 }
 .panel-red{
@@ -132,11 +133,15 @@ body{
 	margin-right:0;
 }*/
 /*Footer Start Here*/
-.footer{
-  background:grey;
+footer{
+  background:#2FA4E7;
   color:white;
   height:50px;
   line-height:50px;
+  font-size:12px;
+  position:absolute;
+  width:100%;
 }
+
 
 /*Footer End Here*/
