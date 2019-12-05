@@ -91,7 +91,7 @@
               <div class="panel-footer ddd">
                   <div class="row">
                     <div class="col-xs-11">
-                      <span class="pull-left"><a href="#"> View All Comments </a></span>
+                      <span class="pull-left"><a href="#">  View All Comments </a></span>
                     </div>
                     <div class="col-xs-1">
                        <a href="#"><span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></a>
