@@ -39,6 +39,7 @@
           </div>
           <div class="image col-lg-5"><img src="img/featured-pic-1.jpeg" alt="..."></div>
         </div>
+
         <!-- Post        -->
         <div class="row d-flex align-items-stretch">
           <div class="image col-lg-5"><img src="img/featured-pic-2.jpeg" alt="..."></div>

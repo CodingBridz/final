@@ -1,3 +1,4 @@
+<?php require_once('inc/db.php');?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,6 +8,23 @@
     <?php require_once('inc/header.php');?>
     <br><br><br><br>
     <div class="container">
+    <?php
+       $query = "SELECT * FROM posts WHERE status = 'publish' ORDER BY id DESC";
+       $run = mysqli_query($con,$query);
+       if (mysqli_num_rows($run) > 0) {
+         while ($row = mysqli_fetch_array($run)) {
+           $id = $row['id'];
+           $date = $row['date'];
+           $title = $row['title'];
+           $author = $row['author'];
+           $author_image = $row['author_image'];
+           $image = $row['image'];
+           $categories = $row['categories'];
+           $tags = $row['tags'];
+           $post_data = $row['post_data'];
+           $views = $row['views'];
+           $status = $row['status'];
+           ?>       
       <div class="row">
         <!-- Latest Posts -->
         <main class="posts-listing col-lg-8"> 
@@ -69,6 +87,15 @@
                   </div>
                 </div>
               </div>
+              <?php
+             }
+          }
+          else{
+    
+           echo "<center><h3>No Posts</h3></center>";
+        }
+
+            ?>
               <!-- post -->
               <div class="post col-xl-6">
                 <div class="post-thumbnail"><a href="post.html"><img src="img/blog-post-4.jpeg" alt="..." class="img-fluid"></a></div>
@@ -88,6 +115,7 @@
                 </div>
               </div>
             </div>
+          </div>
             <!-- Pagination -->
             <nav aria-label="Page navigation example">
               <ul class="pagination pagination-template d-flex justify-content-center">
