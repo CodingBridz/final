@@ -28,7 +28,6 @@
                    $id = $row['id'];
                    $title = $row['title'];
                    $image = $row['image'];
-                   
                 ?> 
               <a href="#">
                 <div class="item d-flex align-items-center">

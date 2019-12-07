@@ -38,3 +38,7 @@ section.featured-posts .image img:hover{
     width: 400px;
     font-size: 20px;
 }
+#radius{
+  margin-left: 65px;
+  border-radius:10px;
+}
