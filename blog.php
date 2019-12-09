@@ -1,17 +1,40 @@
 <?php require_once('inc/db.php');
 
-  $no_of_posts = 2;
+  $no_of_posts = 4;
   if (isset($_GET['page'])){
     $page_id = $_GET['page'];
   }
   else{
     $page_id = 1;
   }
-  $all_post_query = "SELECT  * FROM posts WHERE status ='publish'";
+/* Category code*/
+if (isset($_GET['cat'])) {
+  $cat_id = $_GET['cat'];
+  $cat_query = "SELECT * FROM categories WHERE id = $cat_id";
+  $cat_run = mysqli_query($con,$cat_query);
+  $cat_row = mysqli_fetch_array($cat_run);
+  $cat_name = $cat_row['category'];
+}
+
+  if (isset($_POST['search'])) {
+    $search = $_POST['search'];
+    $all_post_query = "SELECT  * FROM posts WHERE status ='publish'";
+    $all_post_query .=" and tags '%$search%'"; 
+    $all_post_run = mysqli_query($con,$all_post_query);
+    $all_post = mysqli_num_rows($all_post_run);
+    $total_pages = ceil($all_post / $no_of_posts);
+    $posts_start_from = ($page_id - 1) * $no_of_posts;
+  }
+  else{
+    $all_post_query = "SELECT  * FROM posts WHERE status ='publish'";
+  if (isset($cat_name)) {
+    $all_post_query .=" and categories = '$cat_name'";
+  }
   $all_post_run = mysqli_query($con,$all_post_query);
   $all_post = mysqli_num_rows($all_post_run);
   $total_pages = ceil($all_post / $no_of_posts);
   $posts_start_from = ($page_id - 1) * $no_of_posts;
+}
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +56,19 @@
               </center><br>
             <div class="row">
               <?php
-       $query = "SELECT * FROM posts WHERE status = 'publish' ORDER BY id DESC LIMIT $posts_start_from ,$no_of_posts";
+              if (isset($_POST['search'])) {
+                $search = $_POST['search'];
+                $query = "SELECT * FROM posts WHERE status = 'publish'";
+                $query .= "and tags LIKE '%$search%'";
+                $query .= " ORDER BY id DESC LIMIT $posts_start_from ,$no_of_posts";
+                    }
+              else{
+                $query = "SELECT * FROM posts WHERE status = 'publish'";
+                 if (isset($cat_name)) {
+                   $query .= "and categories  = '$cat_name'";
+                 }
+                 $query .= " ORDER BY id DESC LIMIT $posts_start_from ,$no_of_posts";
+                        }
        $run = mysqli_query($con,$query);
        if (mysqli_num_rows($run) > 0) {
          while ($row = mysqli_fetch_array($run)) {
@@ -82,7 +117,7 @@
               <ul class="pagination pagination-template d-flex justify-content-center">
                <?php
                for ($i=1; $i<=$total_pages; $i++) { 
-                 echo "<li class='page-item ".($page_id == $i ? 'active':'')."'><a href='blog.php?page=".$i."' class='page-link'>$i</a></li>";
+                 echo "<li class='page-item ".($page_id == $i ? 'active':'')."'><a href='blog.php?page=".$i."&".(isset($cat_name)?"cat=$cat_id":"")."' class='page-link'>$i</a></li>";
                }
                ?>
               </ul>

@@ -7,10 +7,10 @@
             <header>
               <h3 class="h6">Search the blog</h3>
             </header>
-            <form action="#" class="search-form">
+            <form action="blog.php" method="post" class="search-form">
               <div class="form-group">
                 <input type="search" placeholder="What are you looking for?">
-                <button type="submit" class="submit"><i class="icon-search"></i></button>
+                <button type="submit" class="submit" name="search"><i class="icon-search"></i></button>
               </div>
             </form>
           </div>
@@ -60,7 +60,7 @@
                       $id = $row['id'];
                     echo "
 
-                        <div class='item d-flex justify-content-between'><a href='index.php?cat_id=".$id."'>$category</a><span>12</span></div>
+                        <div class='item d-flex justify-content-between'><a href='blog.php?cat_id=".$id."'>$category</a><span>12</span></div>
                     ";    
                 }
             } else{
@@ -83,6 +83,7 @@
               <li class="list-inline-item"><a href="#" class="tag">#Fashion</a></li>
               <li class="list-inline-item"><a href="#" class="tag">#Sports</a></li>
               <li class="list-inline-item"><a href="#" class="tag">#Economy</a></li>
+              <li class="list-inline-item"><a href="#" class="tag">#Money</a></li>
             </ul>
           </div>
         </aside>
