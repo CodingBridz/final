@@ -1,3 +1,25 @@
+<?php require_once('inc/db.php'); ?>
+<?php 
+if (isset($_GET['post_id'])) {
+  $post_id = $_GET['post_id'];
+  $query = "SELECT * FROM  posts WHERE status = 'publish' and id = $post_id";
+  $run = mysqli_query($con,$query);
+  if (mysqli_num_rows($run)> 0) {
+    $row = mysqli_fetch_array($run);
+    $id = $row['id'];
+    $date = ($row['date']);
+    $title = $row['title'];
+    $author = $row['author'];
+    $author_image = $row['author_image'];
+    $image = $row['image'];
+    $categories = $row['categories'];
+    $post_data = $row['post_data'];
+  }
+  else{
+    header('Location: blog.php');
+  }
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,34 +34,23 @@
         <main class="post blog-post col-lg-8"> 
           <div class="container">
             <div class="post-single">
-              <div class="post-thumbnail"><img src="img/blog-post-3.jpeg" alt="..." class="img-fluid"></div>
+              <div class="post-thumbnail"><img src="img/<?php echo $image;?>" alt="..." class="img-fluid"></div>
               <div class="post-details">
                 <div class="post-meta d-flex justify-content-between">
-                  <div class="category"><a href="#">Business</a><a href="#">Financial</a></div>
+                  <div class="category"><a href="post.php"><?php echo ucfirst($categories);?></a></div>
                 </div>
-                <h1>Diversity in Engineering: The Effect on Questions<a href="#"><i class="fa fa-bookmark-o"></i></a></h1>
+                <h1><?php echo $title; ?><a href="post.php"><i class="fa fa-bookmark-o"></i></a></h1>
                 <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a href="#" class="author d-flex align-items-center flex-wrap">
-                    <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid"></div>
-                    <div class="title"><span>John Doe</span></div></a>
+                    <div class="avatar"><img src="img/<?php echo $author_image;?>" alt="..." class="img-fluid"></div>
+                    <div class="title"><span><?php echo ucfirst($author); ?></span></div></a>
                   <div class="d-flex align-items-center flex-wrap">       
-                    <div class="date"><i class="icon-clock"></i> 2 months ago</div>
+                    <div class="date"><i class="icon-clock"></i> <?php echo $date; ?></div>
                     <div class="views"><i class="icon-eye"></i> 500</div>
                     <div class="comments meta-last"><i class="icon-comment"></i>12</div>
                   </div>
                 </div>
                 <div class="post-body">
-                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  <p> <img src="img/featured-pic-3.jpeg" alt="..." class="img-fluid"></p>
-                  <h3>Lorem Ipsum Dolor</h3>
-                  <p>div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda temporibus iusto voluptates deleniti similique rerum ducimus sint ex odio saepe. Sapiente quae pariatur ratione quis perspiciatis deleniti accusantium</p>
-                  <blockquote class="blockquote">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                    <footer class="blockquote-footer">Someone famous in
-                      <cite title="Source Title">Source Title</cite>
-                    </footer>
-                  </blockquote>
-                  <p>quasi nam. Libero dicta eum recusandae, commodi, ad, autem at ea iusto numquam veritatis, officiis. Accusantium optio minus, voluptatem? Quia reprehenderit, veniam quibusdam provident, fugit iusto ullam voluptas neque soluta adipisci ad.</p>
+                  <?php echo $post_data; ?>
                 </div>
                 <div class="post-tags"><a href="#" class="tag">#Business</a><a href="#" class="tag">#Tricks</a><a href="#" class="tag">#Financial</a><a href="#" class="tag">#Economy</a></div>
                 <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row"><a href="#" class="prev-post text-left d-flex align-items-center">

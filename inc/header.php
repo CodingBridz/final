@@ -32,8 +32,6 @@
               </li>
               <li class="nav-item"><a href="blog.php" class="nav-link"><i class="fa fa-rss-square"></i> Blog</a>
               </li>
-              <li class="nav-item"><a href="post.php" class="nav-link"><i class="fa fa-clipboard"></i> Post</a>
-              </li>
               <li class="nav-item"><a href="#" class="nav-link "><i class="fa fa-info-circle"></i> About</a>
               </li>
               <li class="nav-item"><a href="contact.php" class="nav-link "><i class="fa fa-phone"></i> Contact Us</a>

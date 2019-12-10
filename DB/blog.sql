@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 05, 2019 at 05:20 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Host: 127.0.0.1
+-- Generation Time: Dec 10, 2019 at 12:32 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -69,10 +69,14 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `date`, `title`, `author`, `author_image`, `image`, `categories`, `tags`, `post_data`, `views`, `status`) VALUES
-(1, '12/11/19', 'Post Setting', 'Deepak Verma', '', 'blog-post-1.jpeg', 'Nature', '#Money', 'lorem ipsum fuck', 45, 'publish'),
-(3, '12/11/19', 'Post Setting 1', 'Deepak Verma', '', 'blog-post-2.jpg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
-(4, '12/11/19', 'Post Setting 2', 'Deepak Verma', '', 'blog-post-3.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
-(5, '12/11/19', 'Post Setting 3', 'Deepak Verma', '', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish');
+(1, '12/11/19', 'Post Setting', 'Deepak Verma', 'avatar-1.jpg', 'blog-post-1.jpeg', 'Nature', '#Money online anythng', 'lorem ipsum fuck', 45, 'publish'),
+(3, '12/11/19', 'Post Setting 1', 'Deepak Verma', 'avatar-1.jpg', 'blog-post-2.jpg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
+(4, '12/11/19', 'Post Setting 2', 'Deepak Verma', 'avatar-2.jpg', 'blog-post-3.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
+(5, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-3.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
+(8, '7/12/19', 'Nothing', 'Mr.Verma', 'avatar-1.jpg', 'avatar-1.jpg', 'Coding', '#Coding', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas cum eum, voluptates eos exercitationem in quidem esse? Consequatur sapiente repudiandae iure, commodi unde omnis repellendus quasi reprehenderit harum ut', 55, 'publish'),
+(9, '7/12/19', 'Pagination', 'Navi Singh', 'avatar-2.jpg', 'avatar-2.jpg', 'coding', '#money', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas cum eum, voluptates eos exercitationem in quidem esse? Consequatur sapiente repudiandae iure, commodi unde omnis repellendus quasi reprehenderit harum ut', 55, 'publish'),
+(10, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-3.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
+(11, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-2.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish');
 
 --
 -- Indexes for dumped tables
@@ -98,13 +102,13 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

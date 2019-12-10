@@ -17,9 +17,9 @@ if (isset($_GET['cat'])) {
 }
 
   if (isset($_POST['search'])) {
-    $search = $_POST['search'];
+    $search = $_POST['search-text'];
     $all_post_query = "SELECT  * FROM posts WHERE status ='publish'";
-    $all_post_query .=" and tags '%$search%'"; 
+    $all_post_query .=" and title LIKE '%$search%'"; 
     $all_post_run = mysqli_query($con,$all_post_query);
     $all_post = mysqli_num_rows($all_post_run);
     $total_pages = ceil($all_post / $no_of_posts);
@@ -57,9 +57,9 @@ if (isset($_GET['cat'])) {
             <div class="row">
               <?php
               if (isset($_POST['search'])) {
-                $search = $_POST['search'];
+                $search = $_POST['search-text'];
                 $query = "SELECT * FROM posts WHERE status = 'publish'";
-                $query .= "and tags LIKE '%$search%'";
+                $query .= "and title LIKE '%$search%'";
                 $query .= " ORDER BY id DESC LIMIT $posts_start_from ,$no_of_posts";
                     }
               else{

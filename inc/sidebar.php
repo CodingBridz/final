@@ -9,8 +9,8 @@
             </header>
             <form action="blog.php" method="post" class="search-form">
               <div class="form-group">
-                <input type="search" placeholder="What are you looking for?">
-                <button type="submit" class="submit" name="search"><i class="icon-search"></i></button>
+                <input type="search" name="search-text" placeholder="What are you looking for?">
+                <input type="submit" class="btn btn-default" value="search" name="search" >
               </div>
             </form>
           </div>
@@ -60,7 +60,7 @@
                       $id = $row['id'];
                     echo "
 
-                        <div class='item d-flex justify-content-between'><a href='blog.php?cat_id=".$id."'>$category</a><span>12</span></div>
+                        <div class='item d-flex justify-content-between'><a href='blog.php?cat=".$id."'>$category</a><span>12</span></div>
                     ";    
                 }
             } else{
