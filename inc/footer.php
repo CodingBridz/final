@@ -61,7 +61,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <p>&copy; 2019. All rights reserved. My Blog site.</p>
+              <p>&copy; <?php echo date("Y"); ?> All rights reserved. My Blog site.</p>
             </div>
             <div class="col-md-6 text-right">
               <p>Template By <a href="https://bootstrapious.com/p/bootstrap-carousel" class="text-white">Navi & Deepak</a>

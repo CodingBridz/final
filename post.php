@@ -85,7 +85,7 @@ if (isset($_GET['post_id'])) {
                     <div class="comment-header d-flex justify-content-between">
                       <div class="user d-flex align-items-center">
                         <div class="image"><img src="img/<?php echo $c_image; ?>"alt="..." class="img-fluid rounded-circle" height="50" width="50"></div>
-                        <div class="title"><strong>|<?php echo ucfirst($c_username); ?></strong><span class="date">|<?php echo $c_date; ?></span></div>
+                        <div class="title"><strong>|<?php echo ucfirst($c_name); ?></strong><span class="date">|<?php echo $c_date; ?></span></div>
                       </div>
                     </div>
                     <br/>
@@ -98,25 +98,61 @@ if (isset($_GET['post_id'])) {
                   </div>
                   <?php
                 }
+
+                  if (isset($_POST['submit'])) {
+                    $cs_name = $_POST['name'];
+                    $cs_email = $_POST['email'];
+                    $cs_comment = $_POST['comment'];
+                    $cs_date = time();
+                    if (empty($cs_name) or empty($cs_email) or empty($cs_comment)) {
+                      
+                      $error_msg = "All (*) feilds are Required";
+
+                    }
+                    else{
+                      $cs_query = "INSERT INTO `comments` (`id`, `date`, `name`, `username`, `post_id`, `email`, `website`, `image`, `comment`, `status`) VALUES (NULL, '$cs_date', '$cs_name', 'ShreeGanesh', '$post_id', '$cs_email', 'CodingBridz.com', 'user.svg', '$cs_comment', 'pending')";
+                      if (mysqli_query($con,$cs_query)) {
+                          $msg = "Comment Submited and Wait For Approval";
+                            $cs_name = "";
+                            $cs_email = "";
+                            $cs_comment = "";
+                      }
+                      else{
+                        $error_msg = "Comment has been not Submited";
+                      }
+                    }
+                  }
                   ?>
                 </div>
                 <div class="add-comment">
                   <header>
                     <h3 class="h6">Leave a reply</h3>
                   </header>
-                  <form action="#" class="commenting-form">
+                  <form action="" method="post" class="commenting-form">
                     <div class="row">
                       <div class="form-group col-md-6">
-                        <input type="text" name="username" id="username" placeholder="Name" class="form-control">
+                        <input type="text" name="name" value="<?php
+                        if(isset($cs_name)){echo $cs_name;} ?>" id="username" placeholder="Name" class="form-control">
                       </div>
                       <div class="form-group col-md-6">
-                        <input type="email" name="username" id="useremail" placeholder="Email Address (will not be published)" class="form-control">
+                        <input type="email" name="email" value="<?php
+                        if(isset($cs_email)){echo $cs_email;} ?>"  id="useremail" placeholder="Email Address (will not be published)" class="form-control">
                       </div>
                       <div class="form-group col-md-12">
-                        <textarea name="usercomment" id="usercomment" placeholder="Type your comment" class="form-control"></textarea>
+                        <textarea name="comment" id="usercomment" placeholder="Type your comment"  class="form-control"><?php
+                        if(isset($cs_comment)){echo $cs_comment;} ?> </textarea>
                       </div>
                       <div class="form-group col-md-12">
-                        <button type="submit" class="btn btn-secondary">Submit Comment</button>
+                        <button type="submit" class="btn btn-secondary" name="submit">Submit Comment</button>
+                        <?php
+                        if (isset($error_msg)) {
+                         echo "<span style='color:red;'class='pull-right'>$error_msg</span>";
+                        }
+                        elseif (isset($msg)) {
+                          echo "<span style='color:Green;'class='pull-right'>$msg</span>";
+                        }
+
+                        ?>
                       </div>
                     </div>
                   </form>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2019 at 06:10 PM
+-- Generation Time: Dec 10, 2019 at 07:29 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -68,9 +68,13 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `date`, `name`, `username`, `post_id`, `email`, `website`, `image`, `comment`, `status`) VALUES
-(1, '12/10/2019', 'Deepak Verma', 'ShriGanesh', 11, 'deepak.dv818@gmail.com', 'mediaocean.com', 'user.svg', 'This Post id very Helpful....!!\r\nThnx For Posting ...\r\nSo Sweet of You', 'approved'),
-(3, '12/10/2019', 'Narinder Singh', 'JaiGanesh', 11, 'snavi4551@gamil.com', 'mediaocean.com', 'user.svg', 'This Post id very Helpful....!!\r\nThnx For Posting ...\r\nSo Sweet of You', 'approved'),
-(4, '12/10/2019', 'CodingBridz', 'CodingBridz', 11, 'codingbridz@gmail.com', 'mediaocean.com', 'user.svg', 'Contact Us For Web Developement\r\nDeepak : +918198001907\r\nNavi :+917009613185', 'approved');
+(4, '12/10/2019', 'CodingBridz', 'CodingBridz', 11, 'codingbridz@gmail.com', 'mediaocean.com', 'user.svg', 'Contact Us For Web Developement\r\nDeepak : +918198001907\r\nNavi :+917009613185', 'approved'),
+(5, '12/10/2019', 'Deepak', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Comments Down!!', 'pending'),
+(6, '1576001068', 'Deepak Verma', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello Deepak How are you', 'approved'),
+(7, '1576001219', 'Deepak Verma', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello Deepak How are you', 'pending'),
+(9, '1576001916', 'Deepak Verma', 'ShreeGanesh', 9, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'first comment for pagination ', 'approved'),
+(10, '1576001956', 'Deepak Verma', 'ShreeGanesh', 9, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'first comment for pagination ', 'pending'),
+(11, '', 'Deepak Verma', 'ShreeGanesh', 9, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'first comment for pagination ', 'pending');
 
 -- --------------------------------------------------------
 
@@ -142,7 +146,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `posts`
