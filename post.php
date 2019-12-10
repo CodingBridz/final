@@ -64,41 +64,41 @@ if (isset($_GET['post_id'])) {
                     <div class="icon next"><i class="fa fa-angle-right">   </i></div></a></div>
                 <div class="post-comments">
                   <header>
-                    <h3 class="h6">Post Comments<span class="no-of-comments">(3)</span></h3>
+                    <h3 class="h6">Post Comments<span class="no-of-comments"></span></h3>
                   </header>
+                  </div>
+                  <?php
+                  $c_query = "SELECT * FROM comments WHERE status ='approved' and post_id = $post_id ORDER BY id DESC";
+                  $c_run = mysqli_query($con,$c_query);
+                  if (mysqli_num_rows($c_run) > 0) {
+                  ?>
                   <div class="comment">
+                    <?php
+                    while ($c_row = mysqli_fetch_array($c_run)) {
+                     $c_id = $c_row['id'];
+                     $c_name = $c_row['name'];
+                     $c_username = $c_row['username'];
+                     $c_image = $c_row['image'];
+                     $c_comment = $c_row['comment'];
+                     $c_date = $c_row['date'];
+                    ?>
                     <div class="comment-header d-flex justify-content-between">
                       <div class="user d-flex align-items-center">
-                        <div class="image"><img src="img/user.svg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="title"><strong>Jabi Hernandiz</strong><span class="date">May 2016</span></div>
+                        <div class="image"><img src="img/<?php echo $c_image; ?>"alt="..." class="img-fluid rounded-circle" height="50" width="50"></div>
+                        <div class="title"><strong>|<?php echo ucfirst($c_username); ?></strong><span class="date">|<?php echo $c_date; ?></span></div>
                       </div>
                     </div>
+                    <br/>
                     <div class="comment-body">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                      <p><?php echo $c_comment; ?></p>
                     </div>
+                    <?php
+                  }
+                    ?>
                   </div>
-                  <div class="comment">
-                    <div class="comment-header d-flex justify-content-between">
-                      <div class="user d-flex align-items-center">
-                        <div class="image"><img src="img/user.svg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="title"><strong>Nikolas</strong><span class="date">May 2016</span></div>
-                      </div>
-                    </div>
-                    <div class="comment-body">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                    </div>
-                  </div>
-                  <div class="comment">
-                    <div class="comment-header d-flex justify-content-between">
-                      <div class="user d-flex align-items-center">
-                        <div class="image"><img src="img/user.svg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="title"><strong>John Doe</strong><span class="date">May 2016</span></div>
-                      </div>
-                    </div>
-                    <div class="comment-body">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                    </div>
-                  </div>
+                  <?php
+                }
+                  ?>
                 </div>
                 <div class="add-comment">
                   <header>

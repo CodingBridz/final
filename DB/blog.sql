@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2019 at 12:32 PM
+-- Generation Time: Dec 10, 2019 at 06:10 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -43,6 +43,34 @@ INSERT INTO `categories` (`id`, `category`) VALUES
 (6, 'Travel'),
 (7, 'Electonics'),
 (8, 'Food');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `date` varchar(100) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `post_id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `website` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `comment` text NOT NULL,
+  `status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `date`, `name`, `username`, `post_id`, `email`, `website`, `image`, `comment`, `status`) VALUES
+(1, '12/10/2019', 'Deepak Verma', 'ShriGanesh', 11, 'deepak.dv818@gmail.com', 'mediaocean.com', 'user.svg', 'This Post id very Helpful....!!\r\nThnx For Posting ...\r\nSo Sweet of You', 'approved'),
+(3, '12/10/2019', 'Narinder Singh', 'JaiGanesh', 11, 'snavi4551@gamil.com', 'mediaocean.com', 'user.svg', 'This Post id very Helpful....!!\r\nThnx For Posting ...\r\nSo Sweet of You', 'approved'),
+(4, '12/10/2019', 'CodingBridz', 'CodingBridz', 11, 'codingbridz@gmail.com', 'mediaocean.com', 'user.svg', 'Contact Us For Web Developement\r\nDeepak : +918198001907\r\nNavi :+917009613185', 'approved');
 
 -- --------------------------------------------------------
 
@@ -89,6 +117,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -103,6 +137,12 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `posts`
