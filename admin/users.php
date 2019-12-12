@@ -1,3 +1,4 @@
+<?php require_once('../inc/db.php'); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,6 +20,13 @@
           <li><a href="index.html"><i class="fa fa-tachometer"></i> Dashboard / </a></li>
           <li class="active"><i class="fa fa-folder-opn"></i> Users</li>
         </ol>
+        <?php
+      $query = "SELECT * FROM users ORDER BY id DESC";
+      $run = mysqli_query($con,$query);
+      if (mysqli_num_rows($run) > 0) {
+        
+      
+        ?>
         <div class="row">
           <div class="col-md-6">
               <form action="">
@@ -39,8 +47,7 @@
                 </div>
               </form>
           </div>
-           <div class="col-md-6">
-              
+           <div class="col-md-6">   
           </div>
         </div>
         <table class="table table-hover table-bordered table-striped">
@@ -55,71 +62,46 @@
               <th>Image</th>
               <th>Password</th>
               <th>Role</th>
-              <th>Post</th>
               <th>Edit</th>
               <th>Delete</th>
             </tr>
           </thead>
           <tbody>
+            <?php
+            while ($row = mysqli_fetch_array($run)) {
+              $id = $row['id'];
+              $first_name = ucfirst($row['first_name']);
+              $last_name = ucfirst($row['last_name']);
+              $email= $row['email'];
+              $username= $row['username'];
+              $roll = $row['roll'];
+              $image= $row['image'];
+              $date = $row['date'];
+            ?>
             <tr>
               <td><input type="checkbox" name=""></td>
-              <td>1</td>
-              <td>5/12/19</td>
-              <td>Navi</td>
-              <td>Navi456</td>
-              <td>snavi4551@gamil.com</td>
-              <td><img src="img/icon1.png" alt="" class="img-responsive" width="40px;" height="30px;"></td>
+              <td><?php  echo $id; ?></td>
+              <td><?php  echo $date; ?></td>
+              <td><?php echo "$first_name $last_name"; ?></td>
+              <td><?php echo $username;?></td>
+              <td><?php echo $email;?></td>
+              <td><img src="img/<?php echo $image; ?>" alt="" class="img-responsive" width="40px;" height="30px;"></td>
               <td>******</td>
-              <td>admin</td>
-              <td>11</td>
-              <td><a href=""><i class="fa fa-pencil"></i></a></td>
-              <td><a href=""><i class="fa fa-times"></i></a></td>
+              <td><?php echo $roll; ?></td>
+              <td><a href="add-user.php?edit=<?php echo $id; ?>"><i class="fa fa-pencil"></i></a></td>
+              <td><a href="users.php?del=<?php echo  $id; ?>"><i class="fa fa-times"></i></a></td>
             </tr>
-            <tr>
-              <td><input type="checkbox" name=""></td>
-              <td>1</td>
-              <td>5/12/19</td>
-              <td>Navi</td>
-              <td>Navi456</td>
-              <td>snavi4551@gamil.com</td>
-              <td><img src="img/icon1.png" alt="" class="img-responsive" width="40px;" height="30px;"></td>
-              <td>******</td>
-              <td>admin</td>
-              <td>11</td>
-              <td><a href=""><i class="fa fa-pencil"></i></a></td>
-              <td><a href=""><i class="fa fa-times"></i></a></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" name=""></td>
-              <td>1</td>
-              <td>5/12/19</td>
-              <td>Navi</td>
-              <td>Navi456</td>
-              <td>snavi4551@gamil.com</td>
-              <td><img src="img/icon1.png" alt="" class="img-responsive" width="40px;" height="30px;"></td>
-              <td>******</td>
-              <td>admin</td>
-              <td>11</td>
-              <td><a href=""><i class="fa fa-pencil"></i></a></td>
-              <td><a href=""><i class="fa fa-times"></i></a></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" name=""></td>
-              <td>1</td>
-              <td>5/12/19</td>
-              <td>Navi</td>
-              <td>Navi456</td>
-              <td>snavi4551@gamil.com</td>
-              <td><img src="img/icon1.png" alt="" class="img-responsive" width="40px;" height="30px;"></td>
-              <td>******</td>
-              <td>admin</td>
-              <td>11</td>
-              <td><a href=""><i class="fa fa-pencil"></i></a></td>
-              <td><a href=""><i class="fa fa-times"></i></a></td>
-            </tr>
+            <?php
+               }
+            ?>
           </tbody>
         </table>
-
+        <?php
+        } 
+      else{
+           echo "<center><h2>No Users Avialable Now</h2></center>";     
+      }
+        ?>
       </div>
     </div>
   </div><br>
