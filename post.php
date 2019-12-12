@@ -2,6 +2,10 @@
 <?php 
 if (isset($_GET['post_id'])) {
   $post_id = $_GET['post_id'];
+  /*View Query Counter Start Here*/
+  $views_query = "UPDATE `posts` SET `views` = views +1  WHERE `posts`.`id` = $post_id";
+  mysqli_query($con,$views_query); 
+ /*Views Query Counter End Here*/
   $query = "SELECT * FROM  posts WHERE status = 'publish' and id = $post_id";
   $run = mysqli_query($con,$query);
   if (mysqli_num_rows($run)> 0) {
@@ -106,7 +110,7 @@ if (isset($_GET['post_id'])) {
                     $cs_date = time();
                     if (empty($cs_name) or empty($cs_email) or empty($cs_comment)) {
                       
-                      $error_msg = "All (*) feilds are Required";
+                      $error_msg = "All (*) fields are Required";
 
                     }
                     else{
