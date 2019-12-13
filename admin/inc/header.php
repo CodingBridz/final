@@ -10,7 +10,7 @@
             <a class="nav-link" href="#"><i class="fa fa-plus-square"></i> Add Post<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-user-plus"></i> Add User</a>
+            <a class="nav-link" href="add-user.php"><i class="fa fa-user-plus"></i> Add User</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fa fa-user"></i> Profile</a>
