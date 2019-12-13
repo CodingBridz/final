@@ -42,7 +42,7 @@
                   </div>
                   <div class="col-md-8">
                     <input type="submit" name="" class="btn btn-success" value="Apply">
-                    <a href="#" class="btn btn-primary">Add New</a>
+                    <a href="add-user.php" class="btn btn-primary">Add New</a>
                   </div>
                 </div>
               </form>

@@ -25,9 +25,9 @@
              $date = time();
              $first_name = mysqli_real_escape_string($con,$_POST['first-name']);
              $last_name = mysqli_real_escape_string($con,$_POST['last-name']);
-             $username = mysqli_real_escape_string($con,$_POST['username']);
+             $username = mysqli_real_escape_string($con,strtolower($_POST['username']));
              $username_trim = preg_replace('/\s+/','',$username);
-             $email = mysqli_real_escape_string($con,$_POST['email']);
+             $email = mysqli_real_escape_string($con,strtolower($_POST['email']));
              $password = mysqli_real_escape_string($con,$_POST['password']);
              $role = $_POST['role'];
              $image = $_FILES['image']['name'];
@@ -56,10 +56,21 @@
              else{
               $insert_query = "INSERT INTO `users` (`id`, `date`, `first_name`, `last_name`, `username`, `image`, `password`, `roll`,  `email`) VALUES (NULL, '$date', '$first_name', '$last_name', '$username', '$image', '$password', '$role', '$email')";
 
-                    if (mysqli_query($con,$insert_query) or die("check the code".mysqli_error($con))) {
+                    if (mysqli_query($con,$insert_query)) 
+                    {
                       $msg = "User Has Been Added";
-                    }
-                    else{
+                      move_uploaded_file($image_tmp,"img/$image");
+                      $image_check = "SELECT * FROM users ORDER BY id DESC LIMIT 1";
+                      $image_run = mysqli_query($con,$image_check);
+                      $image_row = mysqli_fetch_array($image_run);
+                      $check_image = $image_row['image'];
+                      $first_name = "";
+                      $last_name = "";
+                      $username ="";
+                      $email = "";   
+                     }
+                    else 
+                    {
                       $error = "User Has Been Not Added";
                     }
              }
@@ -79,23 +90,23 @@
                   echo "<span class='pull-right' style='color:green;'>$msg</span>";
                 }
                 ?>
-                <input type="text" name="first-name" class="form-control" id="first-name" placeholder="First Name">
+                <input type="text" name="first-name" value="<?php if(isset($first_name)){echo $first_name; } ?>"class="form-control" id="first-name" placeholder="First Name">
               </div>
               <div class="form-group">
                 <label for="first-name">Last Name:*</label>
-                <input type="text" name="last-name" class="form-control" id="last-name" placeholder="Last Name">
+                <input type="text" value="<?php if(isset($last_name)){echo $last_name; } ?>" name="last-name" class="form-control" id="last-name" placeholder="Last Name">
               </div>
               <div class="form-group">
                 <label for="username">Username:*</label>
-                <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+                <input type="text" value="<?php if(isset($username)){echo $username; } ?>" name="username" class="form-control" id="username" placeholder="Username">
               </div>
               <div class="form-group">
                 <label for="email">Email:*</label>
-                <input type="text" name="email" class="form-control" id="email" placeholder="Email Address">
+                <input type="text" value="<?php if(isset($email)){echo $email; } ?>" name="email" class="form-control" id="email" placeholder="Email Address">
               </div>
               <div class="form-group">
                 <label for="Password">Password:*</label>
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                <input type="password"  name="password" class="form-control" id="password" placeholder="Password">
               </div>
               <div class="form-group">
                 <label for="role">Role:*</label>
@@ -112,7 +123,13 @@
               <input type="submit" value="Add User" name="submit" class="btn btn-primary">
             </form>
           </div>
-          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <?php
+            if (isset($check_image)) {
+               echo "<img src='img/$check_image' width='100%'>"; 
+            }
+            ?>
+          </div>
         </div>
       </div>
     </div>
