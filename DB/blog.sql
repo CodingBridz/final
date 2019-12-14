@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2019 at 04:31 PM
+-- Generation Time: Dec 14, 2019 at 12:15 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -118,7 +118,7 @@ INSERT INTO `posts` (`id`, `date`, `title`, `author`, `author_image`, `image`, `
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `date` varchar(22) NOT NULL,
+  `date` int(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `roll` varchar(255) NOT NULL,
   `details` text NOT NULL,
-  `salt` varchar(255) NOT NULL,
+  `salt` varchar(255) NOT NULL DEFAULT '$2y$10$hellodeepakvermanaviii',
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -135,7 +135,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `date`, `first_name`, `last_name`, `username`, `image`, `password`, `roll`, `details`, `salt`, `email`) VALUES
-(1, '12/12/2019', 'Deepak', 'Verma', 'deep', 'user.svg', 'admin', 'admin', '', '', 'deepak.dv818@gmail.com');
+(12, 1576249872, 'Deepak', 'Verma', 'deep', 'avatar-1.jpg', '$1$uxGYiaIQ$SaA78pwkpygEZ2XP0fIeQ1', 'admin', '', '$2y$10$hellodeepakvermanaviii', 'deepak.dv818@gmail.com'),
+(13, 1576250181, 'Narinder', 'Singh', 'naviii', 'avatar-2.jpg', '$2y$10$hellodeepakvermanaviieP5MiQPHKRCzuFzXrgsGZhNR/x7B68p6', 'admin', '', '$2y$10$hellodeepakvermanaviii', 'snavi4551@gamil.com');
 
 --
 -- Indexes for dumped tables
@@ -193,7 +194,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
