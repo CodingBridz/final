@@ -1,4 +1,17 @@
 <?php require_once('../inc/db.php'); ?>
+<?php
+if (isset($_GET['del'])) {
+  $del_id = $_GET['del'];
+  $del_query = "DELETE FROM `users` WHERE `users`.`id` = $del_id ";
+  if(mysqli_query($con,$del_query)){
+     $msg = "User Has Been Deleted";
+  }
+  else
+  {
+    $error = "User Has Not Been Deleted";
+  }
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,13 +40,13 @@
         
       
         ?>
+        <form action="" method="post">
         <div class="row">
           <div class="col-md-6">
-              <form action="">
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <select class="form-control" name="" id="">
+                      <select class="form-control" name="bulk-options" id="">
                         <option value="delete">Delete</option>
                         <option value="author">Change to Auhtor</option>
                         <option value="admin">Change to Admin</option>
@@ -45,15 +58,22 @@
                     <a href="add-user.php" class="btn btn-primary">Add New</a>
                   </div>
                 </div>
-              </form>
           </div>
            <div class="col-md-6">   
           </div>
         </div>
+        <?php
+        if (isset($error)) {
+          echo "<span style='color:red;' class='pull-right'>$error</span>";
+        }
+        elseif(isset($msg)) {
+          echo "<span style='color:green;' class='pull-right'>$msg</span>";
+        }
+        ?>
         <table class="table table-hover table-bordered table-striped">
           <thead>
             <tr>
-              <th><input type="checkbox" name=""></th>
+              <th><input type="checkbox" name="" id="selectallboxes"></th>
               <th>#</th>
               <th>Date</th>
               <th>Name</th>
@@ -102,6 +122,7 @@
            echo "<center><h2>No Users Avialable Now</h2></center>";     
       }
         ?>
+        </form>
       </div>
     </div>
   </div><br>
