@@ -16,7 +16,7 @@
             <a class="nav-link" href="#"><i class="fa fa-user"></i> Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+            <a class="nav-link" href="logout.php"><i class="fa fa-power-off"></i> Logout</a>
           </li>
         </ul>
       </div>

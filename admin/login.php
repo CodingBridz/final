@@ -1,3 +1,34 @@
+<?php 
+ob_start();
+session_start();
+require_once('../inc/db.php');
+if (isset($_POST['submit'])) {
+   $username = mysqli_real_escape_string($con,strtolower($_POST['username']));
+   $password = mysqli_real_escape_string($con,$_POST['password']);
+   $check_username_query = "SELECT * FROM  users WHERE username = '$username'";
+   $check_username_run = mysqli_query($con,$check_username_query);
+   if (mysqli_num_rows($check_username_run) > 0) {
+       $row = mysqli_fetch_array($check_username_run);
+       $db_username = $row['username'];
+       $db_password = $row['password']; 
+       $db_role = $row['roll'];
+       $password = crypt($password,$db_password); 
+      
+       if ($username == $db_username && $password == $db_password) {
+          $_SESSION['username'] = $db_username;
+          $_SESSION['roll'] = $db_role;
+          header('Location:index.php');
+       }
+       else{
+        $error = "Wrong Username And Password";
+       }
+
+   }
+   else {
+    $error = "Wrong Username And Password";
+   }
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -12,13 +43,20 @@
       <h1 class="animated rubberBand">Admin Login</h1>
       <div class="textbox">
         <i class="fa fa-user"></i>
-        <input type="text" placeholder="Username" autocomplete="none" >
+        <form action="" method="post">
+        <input type="text" placeholder="Username" required="required" autocomplete="none" name="username" >
       </div>
       <div class="textbox">
         <i class="fa fa-lock"></i>
-        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Password" required="required" name="password">
       </div>
-      <input type="button" class="btn" value="Sign in">
+      <?php
+      if (isset($error)) {
+        echo "<center>$error</center>";
+      }
+      ?>
+      <input type="submit" class="btn" value="Sign in" name="submit">
+    </form>
     </div>
   </body>
 </html>
