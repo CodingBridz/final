@@ -11,6 +11,25 @@ if (isset($_GET['del'])) {
     $error = "User Has Not Been Deleted";
   }
 }
+    if (isset($_POST['checkboxes'])) {
+       foreach($_POST['checkboxes'] as $user_id) {
+        
+          $bulk_option = $_POST['bulk-options'];
+            if ($bulk_option == 'delete') {
+              $bulk_del_query = "DELETE FROM `users` WHERE `users`.`id` = $user_id ";
+              mysqli_query($con,$bulk_del_query);
+            }
+            elseif ($bulk_option == 'author') {
+              $bulk_author_query = "UPDATE `users` SET `roll` = 'author' WHERE `users`.`id` = $user_id";
+              mysqli_query($con,$bulk_author_query);
+            }
+            elseif ($bulk_option == 'admin') {
+              $bulk_admin_query = "UPDATE `users` SET `roll` = 'admin' WHERE `users`.`id` = $user_id";
+              mysqli_query($con,$bulk_admin_query);
+            }
+       }
+
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -99,7 +118,7 @@ if (isset($_GET['del'])) {
               $date = $row['date'];
             ?>
             <tr>
-              <td><input type="checkbox" name=""></td>
+              <td><input type="checkbox" name="checkboxes[]" value="<?php echo $id;?>" class="checkboxes"></td>
               <td><?php  echo $id; ?></td>
               <td><?php  echo $date; ?></td>
               <td><?php echo "$first_name $last_name"; ?></td>
@@ -107,7 +126,7 @@ if (isset($_GET['del'])) {
               <td><?php echo $email;?></td>
               <td><img src="img/<?php echo $image; ?>" alt="" class="img-responsive" width="40px;" height="30px;"></td>
               <td>******</td>
-              <td><?php echo $roll; ?></td>
+              <td><?php echo ucfirst($roll); ?></td>
               <td><a href="add-user.php?edit=<?php echo $id; ?>"><i class="fa fa-pencil"></i></a></td>
               <td><a href="users.php?del=<?php echo  $id; ?>"><i class="fa fa-times"></i></a></td>
             </tr>

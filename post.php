@@ -11,7 +11,7 @@ if (isset($_GET['post_id'])) {
   if (mysqli_num_rows($run)> 0) {
     $row = mysqli_fetch_array($run);
     $id = $row['id'];
-    $date = ($row['date']);
+    $date = date($row['date']);
     $title = $row['title'];
     $author = $row['author'];
     $author_image = $row['author_image'];
@@ -89,7 +89,7 @@ if (isset($_GET['post_id'])) {
                     <div class="comment-header d-flex justify-content-between">
                       <div class="user d-flex align-items-center">
                         <div class="image"><img src="img/<?php echo $c_image; ?>"alt="..." class="img-fluid rounded-circle" height="50" width="50"></div>
-                        <div class="title"><strong>|<?php echo ucfirst($c_name); ?></strong><span class="date">|<?php echo $c_date; ?></span></div>
+                        <div class="title"><strong>&nbsp&nbsp<?php echo ucfirst($c_name); ?></strong><span class="date">&nbsp&nbsp<?php echo $c_date; ?></span></div>
                       </div>
                     </div>
                     <br/>
@@ -162,7 +162,6 @@ if (isset($_GET['post_id'])) {
                   </form>
                 </div>
               </div>
-            </div>
           </div>
         </main>
         <?php require_once('inc/sidebar.php');?>
