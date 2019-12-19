@@ -12,11 +12,10 @@ if (isset($_POST['submit'])) {
        $db_username = $row['username'];
        $db_password = $row['password']; 
        $db_role = $row['roll'];
-       $password = crypt($password,$db_password); 
-      
-       if ($username == $db_username && $password == $db_password) {
-          $_SESSION['username'] = $db_username;
-          $_SESSION['roll'] = $db_role;
+       $password = crypt($password,$db_password);
+       if($username == $db_username && $password == $db_password){
+          $_SESSION['username']= $db_username;
+          $_SESSION['roll']=$db_role;
           header('Location:index.php');
        }
        else{

@@ -1,14 +1,28 @@
 <?php require_once('../inc/db.php'); ?>
 <?php
+session_start();
+if(!isset($_SESSION['username'])){
+header("Location:login.php");
+}
+elseif(isset($_SESSION['username']) && $_SESSION['roll'] == 'author') {
+  header("Location:index.php");
+}
+
+if(!isset($_SESSION['username'])) {
+  header('Location:login.php');
+}
 if (isset($_GET['del'])) {
   $del_id = $_GET['del'];
   $del_query = "DELETE FROM `users` WHERE `users`.`id` = $del_id ";
-  if(mysqli_query($con,$del_query)){
+  if (isset($_SESSION['username']) && $_SESSION['roll'] == 'admin') {
+    
+     if(mysqli_query($con,$del_query)){
      $msg = "User Has Been Deleted";
   }
   else
   {
     $error = "User Has Not Been Deleted";
+  }
   }
 }
     if (isset($_POST['checkboxes'])) {
@@ -56,8 +70,6 @@ if (isset($_GET['del'])) {
       $query = "SELECT * FROM users ORDER BY id DESC";
       $run = mysqli_query($con,$query);
       if (mysqli_num_rows($run) > 0) {
-        
-      
         ?>
         <form action="" method="post">
         <div class="row">
@@ -127,7 +139,7 @@ if (isset($_GET['del'])) {
               <td><img src="img/<?php echo $image; ?>" alt="" class="img-responsive" width="40px;" height="30px;"></td>
               <td>******</td>
               <td><?php echo ucfirst($roll); ?></td>
-              <td><a href="add-user.php?edit=<?php echo $id; ?>"><i class="fa fa-pencil"></i></a></td>
+              <td><a href="edit-user.php?edit=<?php echo $id; ?>"><i class="fa fa-pencil"></i></a></td>
               <td><a href="users.php?del=<?php echo  $id; ?>"><i class="fa fa-times"></i></a></td>
             </tr>
             <?php

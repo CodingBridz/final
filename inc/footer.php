@@ -3,8 +3,9 @@
         <div class="row">
           <div class="col-md-4">
             <div class="logo">
-              <h6 class="text-white">Adavance Blog</h6>
+              <h2 class="text-white">Adavance Blog</h2>
             </div>
+            <hr/>
             <div class="contact-details">
               <h4>Narinder Singh</h4>
               <p>#6938 New Subash Nagar, Ludhiana</p>

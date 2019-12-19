@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2019 at 12:15 PM
+-- Generation Time: Dec 18, 2019 at 06:28 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -74,7 +74,10 @@ INSERT INTO `comments` (`id`, `date`, `name`, `username`, `post_id`, `email`, `w
 (7, '1576001219', 'Deepak Verma', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello Deepak How are you', 'pending'),
 (9, '1576001916', 'Deepak Verma', 'ShreeGanesh', 9, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'first comment for pagination ', 'approved'),
 (10, '1576001956', 'Deepak Verma', 'ShreeGanesh', 9, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'first comment for pagination ', 'pending'),
-(11, '', 'Deepak Verma', 'ShreeGanesh', 9, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'first comment for pagination ', 'pending');
+(11, '', 'Deepak Verma', 'ShreeGanesh', 9, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'first comment for pagination ', 'pending'),
+(12, '1576323844', 'Deepak', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello ', 'approved'),
+(13, '1576323881', 'Deepak', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello ', 'pending'),
+(14, '1576323918', 'Deepak', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello ', 'pending');
 
 -- --------------------------------------------------------
 
@@ -107,8 +110,8 @@ INSERT INTO `posts` (`id`, `date`, `title`, `author`, `author_image`, `image`, `
 (5, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-3.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
 (8, '7/12/19', 'Nothing', 'Mr.Verma', 'avatar-1.jpg', 'avatar-1.jpg', 'Coding', '#Coding', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas cum eum, voluptates eos exercitationem in quidem esse? Consequatur sapiente repudiandae iure, commodi unde omnis repellendus quasi reprehenderit harum ut', 55, 'publish'),
 (9, '7/12/19', 'Pagination', 'Navi Singh', 'avatar-2.jpg', 'avatar-2.jpg', 'coding', '#money', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas cum eum, voluptates eos exercitationem in quidem esse? Consequatur sapiente repudiandae iure, commodi unde omnis repellendus quasi reprehenderit harum ut', 55, 'publish'),
-(10, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-3.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
-(11, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-2.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish');
+(10, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-3.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 46, 'publish'),
+(11, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-2.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 54, 'publish');
 
 -- --------------------------------------------------------
 
@@ -135,8 +138,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `date`, `first_name`, `last_name`, `username`, `image`, `password`, `roll`, `details`, `salt`, `email`) VALUES
-(12, 1576249872, 'Deepak', 'Verma', 'deep', 'avatar-1.jpg', '$1$uxGYiaIQ$SaA78pwkpygEZ2XP0fIeQ1', 'admin', '', '$2y$10$hellodeepakvermanaviii', 'deepak.dv818@gmail.com'),
-(13, 1576250181, 'Narinder', 'Singh', 'naviii', 'avatar-2.jpg', '$2y$10$hellodeepakvermanaviieP5MiQPHKRCzuFzXrgsGZhNR/x7B68p6', 'admin', '', '$2y$10$hellodeepakvermanaviii', 'snavi4551@gamil.com');
+(20, 1576393997, 'Narinder', 'Singh', 'navi', 'avatar-1.jpg', '$1$If04Tm2w$bJDy8Nv3a/oauNjOV.QoQ/', 'admin', '', '$2y$10$hellodeepakvermanaviii', 'snavi4551@gamil.com'),
+(21, 1576400611, 'admin', 'king', 'admin', 'user.svg', '$2y$10$hellodeepakvermanaviie1BkBJz0t5.zXKR27HiWSQl5am6utUme', 'admin', '', '$2y$10$hellodeepakvermanaviii', 'admin@gmail.com'),
+(24, 1576576630, 'Deepak', 'Verma', 'deepak', 'bg-01.jpg', '$2y$10$hellodeepakvermanaviie1BkBJz0t5.zXKR27HiWSQl5am6utUme', 'author', '', '$2y$10$hellodeepakvermanaviii', 'deepak.dv818@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -182,7 +186,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -194,7 +198,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

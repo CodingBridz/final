@@ -1,4 +1,13 @@
 <?php require_once('../inc/db.php'); ?>
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+header("Location:login.php");
+}
+elseif(isset($_SESSION['username']) && $_SESSION['roll'] == 'author') {
+  header("Location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
