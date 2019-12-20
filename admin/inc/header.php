@@ -13,7 +13,7 @@
             <a class="nav-link" href="add-user.php"><i class="fa fa-user-plus"></i> Add User</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-user"></i> Profile</a>
+            <a class="nav-link" href="profile.php"><i class="fa fa-user"></i> Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="logout.php"><i class="fa fa-power-off"></i> Logout</a>

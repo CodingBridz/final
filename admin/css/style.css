@@ -1,6 +1,12 @@
 body{
 	padding-top: 80px;
 }
+body#profile img#profile-img{
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75);
+
+}
 .navbar-brand{
 	font-weight: 800;
 	text-transform: uppercase;
