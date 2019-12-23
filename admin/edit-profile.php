@@ -51,6 +51,7 @@ else{
           <li><a href="index.html"><i class="fa fa-tachometer"></i> Dashboard / &nbsp </a></li>
           <li class="active"><i class="fa fa-user"></i>&nbspEdit-Profile </li>
         </ol>
+      
         <?php
         if (isset($_POST['submit'])) {
              $first_name = mysqli_real_escape_string($con,$_POST['first-name']);

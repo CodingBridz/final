@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2019 at 06:28 AM
+-- Generation Time: Dec 23, 2019 at 08:12 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -38,11 +38,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category`) VALUES
-(1, 'Books'),
-(5, 'Nature'),
-(6, 'Travel'),
-(7, 'Electonics'),
-(8, 'Food');
+(15, 'deepak'),
+(19, 'anything'),
+(21, 'navi'),
+(22, 'admin king');
 
 -- --------------------------------------------------------
 
@@ -69,15 +68,8 @@ CREATE TABLE `comments` (
 
 INSERT INTO `comments` (`id`, `date`, `name`, `username`, `post_id`, `email`, `website`, `image`, `comment`, `status`) VALUES
 (4, '12/10/2019', 'CodingBridz', 'CodingBridz', 11, 'codingbridz@gmail.com', 'mediaocean.com', 'user.svg', 'Contact Us For Web Developement\r\nDeepak : +918198001907\r\nNavi :+917009613185', 'approved'),
-(5, '12/10/2019', 'Deepak', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Comments Down!!', 'pending'),
-(6, '1576001068', 'Deepak Verma', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello Deepak How are you', 'approved'),
-(7, '1576001219', 'Deepak Verma', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello Deepak How are you', 'pending'),
-(9, '1576001916', 'Deepak Verma', 'ShreeGanesh', 9, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'first comment for pagination ', 'approved'),
-(10, '1576001956', 'Deepak Verma', 'ShreeGanesh', 9, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'first comment for pagination ', 'pending'),
-(11, '', 'Deepak Verma', 'ShreeGanesh', 9, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'first comment for pagination ', 'pending'),
-(12, '1576323844', 'Deepak', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello ', 'approved'),
-(13, '1576323881', 'Deepak', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello ', 'pending'),
-(14, '1576323918', 'Deepak', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello ', 'pending');
+(5, '12/10/2019', 'Deepak', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Comments Down!!', 'approved'),
+(6, '1576001068', 'Deepak Verma', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello Deepak How are you', 'approved');
 
 -- --------------------------------------------------------
 
@@ -138,9 +130,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `date`, `first_name`, `last_name`, `username`, `image`, `password`, `roll`, `details`, `salt`, `email`) VALUES
-(20, 1576393997, 'Narinder', 'Singh', 'navi', 'avatar-1.jpg', '$1$If04Tm2w$bJDy8Nv3a/oauNjOV.QoQ/', 'admin', '', '$2y$10$hellodeepakvermanaviii', 'snavi4551@gamil.com'),
-(21, 1576400611, 'admin', 'king', 'admin', 'user.svg', '$2y$10$hellodeepakvermanaviie1BkBJz0t5.zXKR27HiWSQl5am6utUme', 'admin', '', '$2y$10$hellodeepakvermanaviii', 'admin@gmail.com'),
-(24, 1576576630, 'Deepak', 'Verma', 'deepak', 'bg-01.jpg', '$2y$10$hellodeepakvermanaviie1BkBJz0t5.zXKR27HiWSQl5am6utUme', 'author', '', '$2y$10$hellodeepakvermanaviii', 'deepak.dv818@gmail.com');
+(21, 1576400611, 'admin', 'admin', 'admin', 'admin-login.jpg', '$2y$10$hellodeepakvermanaviie1BkBJz0t5.zXKR27HiWSQl5am6utUme', 'admin', '0', '$2y$10$hellodeepakvermanaviii', 'admin@gmail.com'),
+(30, 1577085026, 'Deepak', 'Verma', 'deepak', 'bg-01.jpg', '$2y$10$hellodeepakvermanaviiefZTeRuDJ48DjQep.R2M4tRVCdZ1J0rO', 'author', '', '$2y$10$hellodeepakvermanaviii', 'deepak.dv818@gmail.com'),
+(31, 1577085045, 'Narinder', 'Singh', 'navi', 'admin-login.jpg', '$2y$10$hellodeepakvermanaviiefZTeRuDJ48DjQep.R2M4tRVCdZ1J0rO', 'author', '', '$2y$10$hellodeepakvermanaviii', 'snavi4551@gamil.com');
 
 --
 -- Indexes for dumped tables
@@ -180,13 +172,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -198,7 +190,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

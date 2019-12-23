@@ -65,13 +65,13 @@ if (isset($_GET['del'])) {
         <?php require_once('inc/sidebar.php');?>
       </div>
       <div class="col-md-9">
-        <h1><i class="fa fa-folder-open"></i> Users
-          <small class="smalld">View All Users</small>
+        <h1><i class="fa fa-file"></i> Posts
+          <small class="smalld">View All Posts</small>
           <hr>
         </h1>
         <ol class="breadcrumb">
-          <li><a href="index.html"><i class="fa fa-tachometer"></i> Dashboard / </a></li>
-          <li class="active"><i class="fa fa-folder-opn"></i> Users</li>
+          <li><a href="index.html"><i class="fa fa-tachometer"></i> Dashboard / &nbsp</a></li>
+          <li class="active"><i class="fa fa-file"></i> Posts</li>
         </ol>
         <?php
       $query = "SELECT * FROM users ORDER BY id DESC";
@@ -86,14 +86,14 @@ if (isset($_GET['del'])) {
                     <div class="form-group">
                       <select class="form-control" name="bulk-options" id="">
                         <option value="delete">Delete</option>
-                        <option value="author">Change to Author</option>
-                        <option value="admin">Change to Admin</option>
+                        <option value="publish">Publish</option>
+                        <option value="draft">Draft</option>
                       </select>
                     </div>
                   </div>
                   <div class="col-md-8">
                     <input type="submit" name="" class="btn btn-success" value="Apply">
-                    <a href="add-user.php" class="btn btn-primary">Add New</a>
+                    <a href="" class="btn btn-primary">Add New</a>
                   </div>
                 </div>
           </div>
@@ -114,12 +114,12 @@ if (isset($_GET['del'])) {
               <th><input type="checkbox" name="" id="selectallboxes"></th>
               <th>#</th>
               <th>Date</th>
-              <th>Name</th>
-              <th>Username</th>
-              <th>Email</th>
+              <th>Title</th>
+              <th>Author</th>
               <th>Image</th>
-              <th>Password</th>
-              <th>Role</th>
+              <th>Categories</th>
+              <th>Views</th>
+              <th>Status</th>
               <th>Edit</th>
               <th>Delete</th>
             </tr>

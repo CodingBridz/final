@@ -64,7 +64,9 @@ if (isset($_POST['update'])) {
       $up_msg = "Category Has been Updated";
     }
     else{
-      $up_error = "Category hast not been Updated";
+      $up_error = "Category hast not been Updated
+
+      ";
     }
   }
   }
