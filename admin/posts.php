@@ -4,28 +4,29 @@ session_start();
 if(!isset($_SESSION['username'])){
 header("Location:login.php");
 }
-elseif(isset($_SESSION['username']) && $_SESSION['roll'] == 'author') {
-  header("Location:index.php");
-}
+$session_username = $_SESSION['username'];
 
 if(!isset($_SESSION['username'])) {
   header('Location:login.php');
 }
 if (isset($_GET['del'])) {
   $del_id = $_GET['del'];
-  $del_check_query = "SELECT * FROM users WHERE id = $del_id";
+  if ($_SESSION['roll'] == 'admin' ) {
+    $del_check_query = "SELECT * FROM posts WHERE id = $del_id";
   $del_check_run = mysqli_query($con,$del_check_query);
+  }
+  elseif ($_SESSION['roll'] == 'author') {
+    $del_check_query = "SELECT * FROM posts WHERE id = $del_id and author = '$session_username'";
+  $del_check_run = mysqli_query($con,$del_check_query);
+  }
   if (mysqli_num_rows($del_check_run)> 0) {
-    $del_query = "DELETE FROM `users` WHERE `users`.`id` = $del_id ";
-  if (isset($_SESSION['username']) && $_SESSION['roll'] == 'admin') {
-    
+    $del_query = "DELETE FROM `posts` WHERE `posts`.`id` = $del_id ";   
      if(mysqli_query($con,$del_query)){
-     $msg = "Users Has Been Deleted";
+     $msg = "Post Has Been Deleted";
   }
   else
   {
-    $error = "User Has Not Been Deleted";
-  }
+    $error = "Post Has Not Been Deleted";
   }
   }
   else{
@@ -37,15 +38,15 @@ if (isset($_GET['del'])) {
         
           $bulk_option = $_POST['bulk-options'];
             if ($bulk_option == 'delete') {
-              $bulk_del_query = "DELETE FROM `users` WHERE `users`.`id` = $user_id ";
+              $bulk_del_query = "DELETE FROM `posts` WHERE `posts`.`id` = $user_id ";
               mysqli_query($con,$bulk_del_query);
             }
-            elseif ($bulk_option == 'author') {
-              $bulk_author_query = "UPDATE `users` SET `roll` = 'author' WHERE `users`.`id` = $user_id";
+            elseif ($bulk_option == 'publish') {
+              $bulk_author_query = "UPDATE `posts` SET `status` = 'publish' WHERE `posts`.`id` = $user_id";
               mysqli_query($con,$bulk_author_query);
             }
-            elseif ($bulk_option == 'admin') {
-              $bulk_admin_query = "UPDATE `users` SET `roll` = 'admin' WHERE `users`.`id` = $user_id";
+            elseif ($bulk_option == 'draft') {
+              $bulk_admin_query = "UPDATE `posts` SET `status` = 'draft' WHERE `posts`.`id` = $user_id";
               mysqli_query($con,$bulk_admin_query);
             }
        }
@@ -74,8 +75,14 @@ if (isset($_GET['del'])) {
           <li class="active"><i class="fa fa-file"></i> Posts</li>
         </ol>
         <?php
-      $query = "SELECT * FROM users ORDER BY id DESC";
+        if ($_SESSION['roll'] == 'admin') {
+         $query = "SELECT * FROM posts ORDER BY id DESC";
       $run = mysqli_query($con,$query);
+        }
+        elseif ($_SESSION['roll'] == 'author') {
+        $query = "SELECT * FROM posts WHERE author = '$session_username' ORDER BY id DESC";
+      $run = mysqli_query($con,$query);
+        }
       if (mysqli_num_rows($run) > 0) {
         ?>
         <form action="" method="post">
@@ -128,26 +135,32 @@ if (isset($_GET['del'])) {
             <?php
             while ($row = mysqli_fetch_array($run)) {
               $id = $row['id'];
-              $first_name = ucfirst($row['first_name']);
-              $last_name = ucfirst($row['last_name']);
-              $email= $row['email'];
-              $username= $row['username'];
-              $roll = $row['roll'];
+              $title = $row['title'];
+              $author = $row['author'];
+              $views = $row['views'];
+              $categories = $row['categories'];
               $image= $row['image'];
               $date = $row['date'];
+              $status = $row['status'];
             ?>
             <tr>
               <td><input type="checkbox" name="checkboxes[]" value="<?php echo $id;?>" class="checkboxes"></td>
               <td><?php  echo $id; ?></td>
               <td><?php  echo $date; ?></td>
-              <td><?php echo "$first_name $last_name"; ?></td>
-              <td><?php echo $username;?></td>
-              <td><?php echo $email;?></td>
+              <td><?php echo $title; ?></td>
+              <td><?php echo $author;?></td>
               <td><img src="img/<?php echo $image; ?>" alt="" class="img-responsive" width="40px;" height="30px;"></td>
-              <td>******</td>
-              <td><?php echo ucfirst($roll); ?></td>
-              <td><a href="edit-user.php?edit=<?php echo $id; ?>"><i class="fa fa-pencil"></i></a></td>
-              <td><a href="users.php?del=<?php echo  $id; ?>"><i class="fa fa-times"></i></a></td>
+              <td><?php echo $categories; ?></td>
+              <td><?php echo $views ?></td>
+              <td><span style="color:<?php if ($status == 'publish') {
+                echo "green";
+              }
+                elseif ($status == 'draft') {
+                  echo "red";
+                }
+              ?>"><?php echo ucfirst($status); ?></span></td>
+              <td><a href="edit-post.php?edit=<?php echo $id; ?>"><i class="fa fa-pencil"></i></a></td>
+              <td><a href="posts.php?del=<?php echo  $id; ?>"><i class="fa fa-times"></i></a></td>
             </tr>
             <?php
                }
