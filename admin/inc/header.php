@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-lg-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-plus-square"></i> Add Post<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="add-post.php"><i class="fa fa-plus-square"></i> Add Post<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="add-user.php"><i class="fa fa-user-plus"></i> Add User</a>
