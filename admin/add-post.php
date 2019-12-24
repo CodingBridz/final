@@ -1,8 +1,12 @@
+<?php require_once('../inc/db.php'); ?>
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
 header("Location:login.php");
 }
+$session_username = $_SESSION['username'];
+$session_author_image = $_SESSION['author_image'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,11 +29,49 @@ header("Location:login.php");
           <a href="index.php"><li class="active"><i class="fa fa-tachometer"></i> Dashboard / &nbsp</li></a>   
           <li class="active"><i class="fa fa-plus-square"></i>&nbsp Add Post</li>
         </ol>
+        <?php
+        if (isset($_POST['submit'])) {
+         $date = time();
+         $title = mysqli_real_escape_string($con,$_POST['title']);
+         $post_data = mysqli_real_escape_string($con,$_POST['post_data']);
+         $categories = $_POST['categories'];
+         $tags = mysqli_real_escape_string($con,$_POST['tags']);
+         $status = $_POST['status'];
+         $image = $_FILES['image']['name'];
+         $tmp_name = $_FILES['image']['tmp_name'];
+         if (empty($title) or empty($post_data) or empty($tags) or empty($image)) {
+           $error = "All * Fields are Required";
+         }
+         else{
+          $insert_query = "INSERT INTO posts (date,title,author,author_image,image,categories,tags,post_data,views,status) VALUES ('$date','$title','$session_username','$session_author_image','$image','$categories','$tags','$post_data','0','$status')";
+                  
+                  if (mysqli_query($con,$insert_query)) {
+                    $msg = "Post Has Been Added";
+                    $path = "img/$image";
+                    if(move_uploaded_file($tmp_name,$path)){
+                        copy($path,"../$path");
+
+                    }
+                  }
+                  else{
+                    $error = "Post Has Been Added";
+                  }
+         }
+        }
+        ?>
         <div class="row">
             <div class="col-md-12">
               <form method="post" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="title">Title:*</label>
+                  <?php
+                    if (isset($msg)) {
+                     echo "<span class='pull-right' style='color:green'>$msg</span>";
+                    }
+                    elseif (isset($error)) {
+                     echo "<span class='pull-right' style='color:red'>$error</span>";
+                    }
+                  ?>
                   <input type="text" name="title" placeholder="Type Post Title Here" class="form-control">
                 </div>
                 <div class="form-group">
@@ -50,7 +92,7 @@ header("Location:login.php");
                   <label for="categories">Categories:*</label>
                     <select class="form-control" id="categories" name="categories">
                       <?php
-                      $cat_query = "SELECT  * FROM  categories ORDER BY id DESC";
+                      $cat_query = "SELECT * FROM categories ORDER BY id DESC";
                       $cat_run = mysqli_query($con,$cat_query);
 
                         if (mysqli_num_rows($cat_run) > 0) {

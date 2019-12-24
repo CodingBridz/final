@@ -9,13 +9,17 @@ if (isset($_POST['submit'])) {
    $check_username_run = mysqli_query($con,$check_username_query);
    if (mysqli_num_rows($check_username_run) > 0) {
        $row = mysqli_fetch_array($check_username_run);
+
        $db_username = $row['username'];
        $db_password = $row['password']; 
        $db_role = $row['roll'];
+       $db_author_image = $row['image'];
        $password = crypt($password,$db_password);
        if($username == $db_username && $password == $db_password){
           $_SESSION['username']= $db_username;
           $_SESSION['roll']=$db_role;
+          $_SESSION['author_image'] = $db_author_image;
+          
           header('Location:index.php');
        }
        else{

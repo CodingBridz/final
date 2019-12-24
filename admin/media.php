@@ -34,7 +34,10 @@ header("Location:login.php");
              $tmp_name = $_FILES['media']['tmp_name'][$i];
              $query = "INSERT INTO media (image) VALUES ('$image')";
              if (mysqli_query($con,$query)) {
-               move_uploaded_file($tmp_name,"media/$image");
+               $path = "media/$image";
+               if(move_uploaded_file($tmp_name,$path)){
+                copy($path, "../$path");
+               }
              }
             }
           }
