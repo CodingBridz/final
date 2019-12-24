@@ -111,7 +111,7 @@ if (isset($_GET['unapproved'])) {
       </div>
       <div class="col-md-9">
         <h1><i class="fa fa-comments"></i>&nbspComments
-          <small class="smalld">View All Comments</small>
+          <small class="smalld">View * Comments</small>
           <hr>
         </h1>
         <ol class="breadcrumb">

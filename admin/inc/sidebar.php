@@ -5,6 +5,10 @@
             <i class="fa fa-file-text"> All Post</i>
             <span class="badge badge-primary badge-pill">14</span>
           </a>
+          <a class="list-group-item d-flex justify-content-between align-items-center" href="media.php">
+            <i class="fa fa-database"> Media</i>
+            <span class="badge badge-primary badge-pill">14</span>
+          </a>
           <a class="list-group-item d-flex justify-content-between align-items-center" href="comments.php">
             <i class="fa fa-comment"> Comments</i>
             <span class="badge badge-primary badge-pill">10</span>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2019 at 08:12 AM
+-- Generation Time: Dec 24, 2019 at 09:39 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -69,7 +69,28 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`id`, `date`, `name`, `username`, `post_id`, `email`, `website`, `image`, `comment`, `status`) VALUES
 (4, '12/10/2019', 'CodingBridz', 'CodingBridz', 11, 'codingbridz@gmail.com', 'mediaocean.com', 'user.svg', 'Contact Us For Web Developement\r\nDeepak : +918198001907\r\nNavi :+917009613185', 'approved'),
 (5, '12/10/2019', 'Deepak', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Comments Down!!', 'approved'),
-(6, '1576001068', 'Deepak Verma', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello Deepak How are you', 'approved');
+(6, '1576001068', 'Deepak Verma', 'ShreeGanesh', 11, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', 'Hello Deepak How are you', 'approved'),
+(13, '1577093086', ' ', 'admin', 11, '', '', '', ',zdfn,ksdnf', 'approved'),
+(14, '1577093109', ' ', 'admin', 11, '', '', '', ',zdfn,ksdnf', 'approved'),
+(15, '1577093311', ' ', 'admin', 11, '', '', '', 'aksjbdkjasbfkjfkj', 'approved'),
+(16, '1577093689', ' ', 'admin', 11, '', '', '', 'aksjbdkjasbfkjfkj', 'approved'),
+(17, '1577094059', ' ', 'admin', 11, '', '', '', 'helllo', 'approved'),
+(18, '1577094181', ' ', 'admin', 11, '', '', '', 'helllo', 'approved'),
+(19, '', ' ', 'admin', 11, '', '', '', 'Deepak', 'approved'),
+(20, '1577106725', ' ', 'admin', 11, '', '', '', 'Deepak', 'approved'),
+(21, '1577106829', ' ', 'admin', 11, '', '', '', 'Deepak', 'approved'),
+(22, '1577175932', ' ', 'admin', 11, '', '', '', 'hello deepak how r u', 'approved');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `media`
+--
+
+CREATE TABLE `media` (
+  `id` int(11) NOT NULL,
+  `image` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -96,14 +117,10 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `date`, `title`, `author`, `author_image`, `image`, `categories`, `tags`, `post_data`, `views`, `status`) VALUES
-(1, '12/11/19', 'Post Setting', 'Deepak Verma', 'avatar-1.jpg', 'blog-post-1.jpeg', 'Nature', '#Money online anythng', 'lorem ipsum fuck', 3, 'publish'),
-(3, '12/11/19', 'Post Setting 1', 'Deepak Verma', 'avatar-1.jpg', 'blog-post-2.jpg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
 (4, '12/11/19', 'Post Setting 2', 'Deepak Verma', 'avatar-2.jpg', 'blog-post-3.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
 (5, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-3.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
-(8, '7/12/19', 'Nothing', 'Mr.Verma', 'avatar-1.jpg', 'avatar-1.jpg', 'Coding', '#Coding', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas cum eum, voluptates eos exercitationem in quidem esse? Consequatur sapiente repudiandae iure, commodi unde omnis repellendus quasi reprehenderit harum ut', 55, 'publish'),
-(9, '7/12/19', 'Pagination', 'Navi Singh', 'avatar-2.jpg', 'avatar-2.jpg', 'coding', '#money', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas cum eum, voluptates eos exercitationem in quidem esse? Consequatur sapiente repudiandae iure, commodi unde omnis repellendus quasi reprehenderit harum ut', 55, 'publish'),
-(10, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-3.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 46, 'publish'),
-(11, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-2.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 54, 'publish');
+(8, '7/12/19', 'Nothing', 'Mr.Verma', 'avatar-1.jpg', 'avatar-1.jpg', 'Coding', '#Coding', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas cum eum, voluptates eos exercitationem in quidem esse? Consequatur sapiente repudiandae iure, commodi unde omnis repellendus quasi reprehenderit harum ut', 58, 'publish'),
+(9, '7/12/19', 'Pagination', 'Navi Singh', 'avatar-2.jpg', 'avatar-2.jpg', 'coding', '#money', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas cum eum, voluptates eos exercitationem in quidem esse? Consequatur sapiente repudiandae iure, commodi unde omnis repellendus quasi reprehenderit harum ut', 55, 'publish');
 
 -- --------------------------------------------------------
 
@@ -151,6 +168,12 @@ ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `media`
+--
+ALTER TABLE `media`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -178,13 +201,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `media`
+--
+ALTER TABLE `media`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
