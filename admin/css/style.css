@@ -54,7 +54,7 @@ box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.75);
 }
 .huge{
 	color: white;
-	padding-left: 70px;
+	padding-left:80px;
 	font-size:40px;
 }
 .comm{
@@ -148,6 +148,14 @@ footer{
   position:absolute;
   width:100%;
 }
-
-
 /*Footer End Here*/
+.right{
+	color: white;
+	padding-left:90px;
+	font-size:40px;
+}
+.right1{
+	color: white;
+	padding-left:70px;
+	font-size:40px;
+}

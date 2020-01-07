@@ -85,7 +85,8 @@ if (isset($_GET['cat'])) {
            $status = $row['status'];
            ?>  
               <div class="post col-xl-6">
-                <div class="post-thumbnail"><a href="post.php?post_id=<?php echo $id; ?>"><img src="img/<?php echo $image; ?>" alt="..." class="img-fluid"></a></div>
+                <div class="post-thumbnail"><a href="post.php?post_id=<?php echo $id; ?>"><img src="img/<?php echo $image; ?>" alt="..." height="200" width="240" class="img-fluid"></a></div>
+                <br/>
                 <div class="post-details">
                   <div class="post-meta d-flex justify-content-between">
                     <div class="date meta-last"><?php echo $date; ?></div>
@@ -137,4 +138,6 @@ if (isset($_GET['cat'])) {
     <script src="vendor/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
     <script src="js/front.js"></script>
   </body>
+
+
 </html>

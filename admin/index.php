@@ -33,8 +33,8 @@ header("Location:login.php");
                     <i class="fa fa-comments fa-5x commet"></i>
                   </div>
                   <div class="col-xs-9">
-                    <div class="text-right huge">11</div>
-                    <div class="text-right comm">New Comments</div>
+                    <div class="text-right huge ">11</div>
+                    <div class="text-right comm ">New Comments</div>
                   </div>
                 </div>
               </div>
@@ -58,8 +58,8 @@ header("Location:login.php");
                     <i class="fa fa-file-text fa-5x commet"></i>
                   </div>
                   <div class="col-xs-9">
-                    <div class="text-right huge" >18</div>
-                    <div class="text-right comm">All Posts</div>
+                    <div class="text-right  right" >18</div>
+                    <div class="text-right comm ">All Posts</div>
                   </div>
                 </div>
               </div>
@@ -83,7 +83,7 @@ header("Location:login.php");
                     <i class="fa fa-users fa-5x commet"></i>
                   </div>
                   <div class="col-xs-9">
-                    <div class="text-right huge">30</div>
+                    <div class="text-right right1">30</div>
                     <div class="text-right comm">All Users</div>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ header("Location:login.php");
                     <i class="fa fa-folder-open fa-5x commet"></i>
                   </div>
                   <div class="col-xs-9">
-                    <div class="text-right huge">9</div>
+                    <div class="text-right right">9</div>
                     <div class="text-right comm">All Categories</div>
                   </div>
                 </div>
