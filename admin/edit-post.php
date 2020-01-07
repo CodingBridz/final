@@ -114,7 +114,9 @@ if (isset($_GET['edit'])) {
                  <a href="media.php" class="btn btn-primary" name="">Add Media</a>
                 </div>
                 <div class="form-group">
-                  <textarea name="post-data" id="textarea" rows="10" value="<?php if(isset($up_post_data)){echo $post_data;} ?>" class="form-control"></textarea>
+                  <textarea name="post-data" id="textarea"  rows="10" value="" class="form-control">
+                    <?php if(isset($post_data)){echo $post_data;} ?>
+                  </textarea>
                 </div>
                 <div class="row">
                   <div class="col-md-6">
@@ -135,7 +137,7 @@ if (isset($_GET['edit'])) {
                           while ($cat_row =mysqli_fetch_array($cat_run)){
                             
                             $cat_name = $cat_row['category'];
-                            echo "<option value='".$cat_name."'".((isset($up_categories) and $up_categories == $cat_name)?"selected":"").">".ucfirst($cat_name)."</option>";
+                            echo "<option value='".$cat_name."'".((isset($categories) and $categories == $cat_name)?"selected":"").">".ucfirst($cat_name)."</option>";
                           }
                           }
                         
@@ -151,7 +153,7 @@ if (isset($_GET['edit'])) {
                   <div class="col-md-6">
                     <div class="form-group">
                   <label for="tags">Tags:*</label>
-                  <input type="text" name="tags" value="<?php if(isset($up_tags)){echo $up_tags;} ?>" placeholder="Your Tags Here" class="form-control">
+                  <input type="text" name="tags" value="<?php if(isset($tags)){echo $tags;} ?>" placeholder="Your Tags Here" class="form-control">
                 </div>
 
                   </div>
@@ -175,8 +177,8 @@ if (isset($_GET['edit'])) {
                           echo "<center><h6>No Category Availabel</h6></center>";
                         }
                       ?>
-                      <option value="publish" <?php  if(isset($up_status) and $up_status = 'publish'){ echo "selected";}  ?>>Publish</option>
-                      <option value="draft" <?php  if(isset($up_status) and $up_status = 'draft'){ echo "selected";}  ?>>Draft</option>
+                      <option value="publish" <?php  if(isset($status) and $status = 'publish'){ echo "selected";}  ?>>Publish</option>
+                      <option value="draft" <?php  if(isset($status) and $status = 'draft'){ echo "selected";}  ?>>Draft</option>
                     </select>
                 </div>
                   </div>
