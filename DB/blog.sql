@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2019 at 09:39 AM
+-- Generation Time: Jan 07, 2020 at 05:49 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -38,10 +38,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category`) VALUES
-(15, 'deepak'),
-(19, 'anything'),
-(21, 'navi'),
-(22, 'admin king');
+(23, 'admin'),
+(24, 'author'),
+(25, 'nature'),
+(26, 'home');
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,9 @@ INSERT INTO `comments` (`id`, `date`, `name`, `username`, `post_id`, `email`, `w
 (19, '', ' ', 'admin', 11, '', '', '', 'Deepak', 'approved'),
 (20, '1577106725', ' ', 'admin', 11, '', '', '', 'Deepak', 'approved'),
 (21, '1577106829', ' ', 'admin', 11, '', '', '', 'Deepak', 'approved'),
-(22, '1577175932', ' ', 'admin', 11, '', '', '', 'hello deepak how r u', 'approved');
+(22, '1577175932', ' ', 'admin', 11, '', '', '', 'hello deepak how r u', 'approved'),
+(23, '1578032842', 'Deepak Verma', 'ShreeGanesh', 26, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', ' Hello World', 'approved'),
+(24, '1578032852', 'Deepak Verma', 'ShreeGanesh', 26, 'deepak.dv818@gmail.com', 'CodingBridz.com', 'user.svg', ' Hello World', 'pending');
 
 -- --------------------------------------------------------
 
@@ -89,8 +91,47 @@ INSERT INTO `comments` (`id`, `date`, `name`, `username`, `post_id`, `email`, `w
 
 CREATE TABLE `media` (
   `id` int(11) NOT NULL,
-  `image` int(11) NOT NULL
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `media`
+--
+
+INSERT INTO `media` (`id`, `image`) VALUES
+(19, 'admin-login.jpg'),
+(20, 'avatar-1.jpg'),
+(21, 'avatar-2.jpg'),
+(22, 'avatar-3.jpg'),
+(23, 'bg-01.jpg'),
+(24, 'blog-1.jpg'),
+(25, 'blog-2.jpg'),
+(26, 'blog-3.jpg'),
+(27, 'blog-post-1.jpeg'),
+(28, 'blog-post-2.jpg'),
+(29, 'blog-post-3.jpeg'),
+(30, 'blog-post-4.jpeg'),
+(31, 'divider-bg.jpg'),
+(32, 'favicon.ico'),
+(33, 'featured-pic-1.jpeg'),
+(34, 'featured-pic-2.jpeg'),
+(35, 'featured-pic-3.jpeg'),
+(36, 'gallery-1.jpg'),
+(37, 'gallery-2.jpeg'),
+(38, 'gallery-2.jpg'),
+(39, 'admin-login.jpg'),
+(40, 'avatar-1.jpg'),
+(41, 'avatar-2.jpg'),
+(42, 'avatar-3.jpg'),
+(43, 'bg-01.jpg'),
+(44, 'blog-1.jpg'),
+(45, 'blog-2.jpg'),
+(46, 'blog-3.jpg'),
+(47, 'blog-post-1.jpeg'),
+(48, 'blog-post-2.jpg'),
+(49, 'blog-post-3.jpeg'),
+(50, 'blog-post-4.jpeg'),
+(51, 'ShoppingCart.PNG');
 
 -- --------------------------------------------------------
 
@@ -117,10 +158,11 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `date`, `title`, `author`, `author_image`, `image`, `categories`, `tags`, `post_data`, `views`, `status`) VALUES
-(4, '12/11/19', 'Post Setting 2', 'Deepak Verma', 'avatar-2.jpg', 'blog-post-3.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
-(5, '12/11/19', 'Post Setting 3', 'Deepak Verma', 'avatar-3.jpg', 'blog-post-4.jpeg', 'Nature', '#Money', 'lorem ipsum fuck u', 45, 'publish'),
-(8, '7/12/19', 'Nothing', 'Mr.Verma', 'avatar-1.jpg', 'avatar-1.jpg', 'Coding', '#Coding', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas cum eum, voluptates eos exercitationem in quidem esse? Consequatur sapiente repudiandae iure, commodi unde omnis repellendus quasi reprehenderit harum ut', 58, 'publish'),
-(9, '7/12/19', 'Pagination', 'Navi Singh', 'avatar-2.jpg', 'avatar-2.jpg', 'coding', '#money', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quas cum eum, voluptates eos exercitationem in quidem esse? Consequatur sapiente repudiandae iure, commodi unde omnis repellendus quasi reprehenderit harum ut', 55, 'publish');
+(23, '1578032659', 'Deepak Verma', 'admin', 'admin-login.jpg', 'blog-2.jpg', 'author', '#author', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.', 1, 'publish'),
+(26, '1578032815', 'Home of Nature', 'admin', 'admin-login.jpg', 'Hydrangeas.jpg', 'nature', '#nature', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.', 4, 'publish'),
+(27, '1578032926', 'Welcome Home', 'admin', 'admin-login.jpg', 'Lighthouse.jpg', 'home', '#home', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.', 0, 'publish'),
+(28, '1578033005', 'Coding Bridz', 'admin', 'admin-login.jpg', 'template-mac.png', 'admin', '#admin', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.', 0, 'publish'),
+(29, '1578033083', 'Narinder Singh', 'admin', 'admin-login.jpg', 'blog-3.jpg', 'author', '#author', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere ullam obcaecati quia quis harum, unde, neque, voluptatum eveniet tenetur, laborum reiciendis adipisci nobis nesciunt quas dolorem magni est quos reprehenderit.', 0, 'publish');
 
 -- --------------------------------------------------------
 
@@ -195,25 +237,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `users`
