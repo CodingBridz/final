@@ -7,15 +7,11 @@
             </div>
             <hr/>
             <div class="contact-details">
-              <h4>Narinder Singh</h4>
+              <h4>Narinder & Deepak</h4>
               <p>#6938 New Subash Nagar, Ludhiana</p>
-              <p>Phone: (+91) 700 961 3185</p>
-              <p>Email: <a href="mailto:info@company.com">snavi4551@gamil.com</a></p>
-              <hr/>
-              <h4>Deepak Verma</h4>
-              <p>#1637 Daulot Colony, Ludhiana</p>
-              <p>Phone: (+91) 819 800 1907</p>
-              <p>Email: <a href="mailto:info@company.com">deepak.dv818@gamil.com</a></p>
+              <p>Narinder: (+91) 700 961 3185</p>
+              <p>Deepak: (+91) 819 800 1907</p>
+              <p>Email: <a href="mailto:info@company.com">codingbridz@gamil.com</a></p>
               <ul class="social-menu">
                 <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>

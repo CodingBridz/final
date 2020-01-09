@@ -11,7 +11,7 @@
       <div class="row">
         <main class="col-lg-8"> 
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 col-sm-12 col-xs-12">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.4357647795127!2d75.86302515008553!3d30.93039188304132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a837c9008b973%3A0xd750f8e26e9fe94a!2sCodingBridz!5e0!3m2!1sen!2sin!4v1575443104454!5m2!1sen!2sin" width="700" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
             <div class="col-md-12 contact-form">

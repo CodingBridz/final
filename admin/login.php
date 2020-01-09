@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
   </head>
   <body>
     <div class="login-box">
-      <h1 class="animated rubberBand">Admin Login</h1>
+      <h1 class="animated rubberBand">Login</h1>
       <div class="textbox">
         <i class="fa fa-user"></i>
         <form action="" method="post">
@@ -58,6 +58,7 @@ if (isset($_POST['submit'])) {
         echo "<center>$error</center>";
       }
       ?>
+      
       <input type="submit" class="btn" value="Sign in" name="submit">
     </form>
     </div>

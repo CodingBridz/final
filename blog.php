@@ -85,7 +85,7 @@ if (isset($_GET['cat'])) {
            $status = $row['status'];
            ?>  
               <div class="post col-xl-6">
-                <div class="post-thumbnail"><a href="post.php?post_id=<?php echo $id; ?>"><img src="img/<?php echo $image; ?>" alt="..." height="200" width="240" class="img-fluid"></a></div>
+                <div class="post-thumbnail img-thumbnail"><a href="post.php?post_id=<?php echo $id; ?>"><img src="img/<?php echo $image; ?>" alt="..." height="240" width="340" class="img-responsive" ></a></div>
                 <br/>
                 <div class="post-details">
                   <div class="post-meta d-flex justify-content-between">
@@ -93,10 +93,10 @@ if (isset($_GET['cat'])) {
                     <div class="category"><a href="index.php?cat=<?php
                     echo $id; ?>"><?php echo $categories; ?></a></div>
                   </div><a href="post.php?post_id=<?php echo $id; ?>">
-                    <h3 class="h4"><?php echo $title; ?></h3></a>
-                  <p class="text-muted"><?php echo substr($post_data,0,300)."........"; ?>
-                     <a href="post.php?post_id=<?php echo $id; ?>" name="read more"  class="btn btn-primary" id="radius">Read More</a>
+                    <h3 class="h4" id="title"><?php echo $title; ?></h3></a>
+                  <p class="text-muted"><?php echo substr($post_data,0,400)."........"; ?>
                   </p>
+                  <a href="post.php?post_id=<?php echo $id; ?>" name="read more"  class="btn btn-primary" id="radius">Read More</a>
                   <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
                       <div class="avatar"><img src="img/avatar-3.jpg" alt="..." class="img-fluid"></div>
                       <div class="title"><span><?php echo $author; ?></span></div></a>

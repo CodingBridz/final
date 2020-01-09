@@ -39,6 +39,9 @@ section.featured-posts .image img:hover{
     font-size: 20px;
 }
 #radius{
-  margin-left: 65px;
-  border-radius:10px;
+  margin-left: 230px;
+  border-radius:20px;
+}
+#title{
+  margin-bottom:0;
 }
